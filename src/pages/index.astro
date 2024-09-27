@@ -1,17 +1,22 @@
 ---
-import { LandingPageComponent } from "@/components/landing-page"
-import '@/styles/globals.css'
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import HeroSection from "@/components/hero";
+import ClientShowcase from "@/components/client-showcase";
+import FeaturesSection from "@/components/feature";
+import PricingSection from "@/components/pricing";
+import AboutSection from "@/components/about";
+import ClientReviews from "@/components/testimonial";
+import FAQSection from "@/components/faq";
+import ContactSection from "@/components/contact";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>PT. LARE OSING NDO</title>
-	</head>
-	<body>
-		<LandingPageComponent client:load/>
-	</body>
-</html>
+<BaseLayout>
+  <HeroSection client:load />
+  <ClientShowcase client:load />
+  <FeaturesSection client:load />
+  <PricingSection client:load />
+  <AboutSection client:load />
+  <ClientReviews client:load />
+  <FAQSection client:load />
+  <ContactSection client:load />
+</BaseLayout>
