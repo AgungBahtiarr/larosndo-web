@@ -20,7 +20,7 @@ const ClientShowcase = () => {
     <section className="bg-white dark:bg-gray-900 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
-          Trusted by Industry Leaders
+        Pilihan Utama Lembaga dan Bisnis
         </h2>
         <div className="relative h-40 overflow-hidden">
           <motion.div

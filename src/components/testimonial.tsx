@@ -3,28 +3,28 @@ import { StarIcon } from "lucide-react";
 const ClientReviews = () => {
   const reviews = [
     {
-      name: "John Doe",
+      name: "Rifqi Simanjuntak",
       role: "CEO, TechCorp",
       content:
         "Larosndo has transformed our business connectivity. Their high-speed internet and reliable service have been crucial to our success.",
       rating: 5,
     },
     {
-      name: "Jane Smith",
+      name: "Ihwan Persneleng",
       role: "Homeowner",
       content:
         "I've never experienced such fast and stable internet at home. Larosndo's customer service is top-notch too!",
       rating: 5,
     },
     {
-      name: "Mike Johnson",
+      name: "Ilham Kopling",
       role: "Small Business Owner",
       content:
         "Switching to Larosndo was the best decision for my business. Their internet speed and uptime are unmatched.",
       rating: 4,
     },
     {
-      name: "Sarah Lee",
+      name: "Agung Windows",
       role: "Remote Worker",
       content:
         "As someone who works from home, having reliable internet is crucial. Larosndo delivers consistently excellent service.",
@@ -36,7 +36,7 @@ const ClientReviews = () => {
     <section className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
-          What Our Clients Say
+          Apa yang dikatakan mitra kami
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {reviews.map((review, index) => (

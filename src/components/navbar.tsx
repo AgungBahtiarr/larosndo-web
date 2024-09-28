@@ -2,7 +2,7 @@ import { MenuIcon, XIcon, SunIcon, MoonIcon } from "lucide-react";
 
 const Navbar = ({ theme, toggleTheme, isMenuOpen, setIsMenuOpen }) => {
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-2xl">
+    <nav className="sticky top-0 z-40 bg-white dark:bg-gray-900 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -43,10 +43,10 @@ const Navbar = ({ theme, toggleTheme, isMenuOpen, setIsMenuOpen }) => {
 const NavItems = ({ mobile = false }) => {
   const items = [
     { name: "Home", href: "#" },
-    { name: "Features", href: "#features" },
+    { name: "Layanan", href: "#features" },
     { name: "Pricing", href: "#pricing" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Tentang", href: "#about" },
+    { name: "Kontak", href: "#contact" },
   ];
 
   return items.map((item) => (

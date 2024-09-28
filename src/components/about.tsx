@@ -15,7 +15,7 @@ const AboutSection = () => {
 
   const tabContent = {
     mission: {
-      title: "Our Mission",
+      title: "Misi Kami",
       content:
         "At Larosndo, we're on a mission to bridge the digital divide by providing lightning-fast, reliable internet access to both urban and rural areas. We believe that everyone deserves to be connected to the world of opportunities that the internet offers.",
       icon: <LightbulbIcon className="h-12 w-12 text-[#fb923c]" />,
@@ -39,11 +39,10 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            About Larosndo
+            Tentang LarosNdo
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Empowering communities with cutting-edge internet solutions since
-            2010.
+          Menghadirkan solusi internet mutakhir sejak 2020
           </p>
         </div>
 
@@ -58,9 +57,9 @@ const AboutSection = () => {
               transition={{ duration: 0.5 }}
             />
             <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
-              <p className="text-2xl font-bold text-[#fb923c]">10+ Years</p>
+              <p className="text-2xl font-bold text-[#fb923c]">10+ Tahun</p>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                of Excellence
+                pengalaman
               </p>
             </div>
           </div>
