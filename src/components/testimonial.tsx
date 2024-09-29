@@ -17,7 +17,7 @@ const ClientReviews = () => {
       rating: 5,
     },
     {
-      name: "Ilham Kopling",
+      name: "Ilham Soundsystem",
       role: "Small Business Owner",
       content:
         "Switching to Larosndo was the best decision for my business. Their internet speed and uptime are unmatched.",
