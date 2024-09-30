@@ -1,6 +1,5 @@
 import {
   WifiIcon,
-  GlobeIcon,
   ShieldCheckIcon,
   HeadphonesIcon,
   RocketIcon,
