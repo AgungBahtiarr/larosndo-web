@@ -2,11 +2,11 @@ import { MenuIcon, XIcon, SunIcon, MoonIcon } from "lucide-react";
 
 const Navbar = ({ theme, toggleTheme, isMenuOpen, setIsMenuOpen }) => {
   return (
-    <nav className="sticky top-0 z-40 bg-white dark:bg-gray-900 shadow-2xl">
+    <nav className="sticky top-0 z-40 bg-white dark:bg-gray-900 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <img className="h-14" src="laroslogo.png" alt="" />
+            <img className="h-12" src="laroslogo.png" alt="" />
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <NavItems />
