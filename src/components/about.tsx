@@ -42,16 +42,16 @@ const AboutSection = () => {
             Tentang LarosNdo
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Menghadirkan solusi internet mutakhir sejak 2020
+            Menghadirkan solusi internet mutakhir sejak 2020
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <motion.img
-              src="/placeholder.svg?height=400&width=600"
+              src="/laroslogo.png"
               alt="Larosndo Team"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg py-20 px-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
