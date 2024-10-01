@@ -43,12 +43,13 @@ const ClientShowcase = (props) => {
               },
             }}
           >
-            {logos.concat().map((logo) => (
+            {logos.concat().map((logo, index) => (
               // <div
               //   key={index}
               //   className="flex items-center justify-center w-48 h-28 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
               // >
               <img
+                key={index}
                 src={logo.logo}
                 alt={`${logo.name} logo`}
                 className="max-w-[310px] max-h-[100px] object-contain"
