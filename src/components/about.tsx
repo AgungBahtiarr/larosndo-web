@@ -48,18 +48,11 @@ const AboutSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <motion.img
-              src="/laroslogo.png"
-              alt="Larosndo Team"
-              className="rounded-lg shadow-lg py-20 px-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            />
+            <div className="rounded-lg py-20 px-8 bg-[url('/server.jpeg')] h-[324px] bg-cover"></div>
             <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
               <p className="text-2xl font-bold text-[#fb923c]">10+ Tahun</p>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                pengalaman
+                Pengalaman
               </p>
             </div>
           </div>

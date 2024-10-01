@@ -8,10 +8,13 @@ import AboutSection from "@/components/about";
 import ClientReviews from "@/components/testimonial";
 import FAQSection from "@/components/faq";
 import ContactSection from "@/components/contact";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout>
-  <HeroSection client:load />
+  <HeroSection client:load>
+    <Image src={"/laroslogo.png"} alt="Laros" width={500} height={500} />
+  </HeroSection>
   <ClientShowcase client:load />
   <FeaturesSection client:load />
   <PricingSection client:load />

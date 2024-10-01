@@ -33,7 +33,7 @@ const ClientReviews = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section className="py-20 bg-gray-50 dark:bg-gray-800 dark:bg-dot-white/[0.2] bg-dot-black/[0.2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
           Apa yang dikatakan mitra kami
@@ -51,7 +51,7 @@ const ClientReviews = () => {
 const TestimonialCard = ({ review }) => {
   return (
     <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
-      <div className="flex items-center mb-4">
+      <div className="flex items-center mb-4 ">
         <div className="mr-4">
           <img
             src={`https://i.pravatar.cc/60?img=${Math.floor(
