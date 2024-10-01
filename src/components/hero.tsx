@@ -1,5 +1,3 @@
-import React, { useState, useRef } from "react";
-
 import {
   Server,
   Database,
@@ -18,12 +16,11 @@ import { Boxes } from "./ui/background-boxes";
 const HeroSection = (props) => {
   return (
     <div className="h-[90vh] w-full dark:bg-black bg-white relative flex items-center justify-center overflow-hidden">
-
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div className="relative z-10 w-full">
         <GoogleGeminiEffect children={props.children} />
       </div>
-      {/* <NetworkIcons /> */}
+      <NetworkIcons />
     </div>
   );
 };
@@ -61,13 +58,13 @@ const GoogleGeminiEffect = (props) => {
   // };
 
   return (
-    <div
-      // ref={containerRef}
-      // onMouseMove={handleMouseMove}
-      className="h-[90vh] relative overflow-hidden bg-white dark:bg-slate-900 flex items-center justify-center"
-    >
-            <Boxes />
-
+    // <div
+    //   ref={containerRef}
+    //   onMouseMove={handleMouseMove}
+    //   className="h-[90vh] relative overflow-hidden bg-white dark:bg-slate-900 flex items-center justify-center"
+    // >
+    <div className="h-[90vh] relative overflow-hidden bg-white dark:bg-slate-900 flex items-center justify-center">
+      <Boxes />
       <div className="absolute inset-0 w-full h-full bg-white dark:bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
       {/* <Gradient mousePosition={mousePosition} /> */}
       <div className="relative z-30 flex flex-col items-center justify-center text-center">

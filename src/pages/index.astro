@@ -9,17 +9,51 @@ import ClientReviews from "@/components/testimonial";
 import FAQSection from "@/components/faq";
 import ContactSection from "@/components/contact";
 import { Image } from "astro:assets";
+
+const logos = [
+  { name: "cli", logo: "client/logocli.png" },
+  { name: "swin", logo: "client/logo_swin.png" },
+  { name: "sewiwi", logo: "/client/sewiwi.png" },
+  { name: "SMKN Glagah", logo: "/client/smkglagah.jpg" },
+  { name: "SMKN 1 BWI", logo: "/client/smkn1bwi.jpg" },
+  { name: "Satelit", logo: "/client/logo-satelit.png" },
+  { name: "SMK 17 Cluring", logo: "/client/smk17cluring.png" },
+  { name: "Stikes", logo: "/client/stikesbwi.png" },
+  { name: "MAN 1 BWI", logo: "/client/man1bwi.jpeg" },
+  { name: "STFI", logo: "/client/stfi.png" },
+  { name: "MTS 10 BWI", logo: "/client/mts10bwi.png" },
+  { name: "AYO", logo: "/client/ayo.webp" },
+  { name: "Riyad", logo: "/client/riyad.png" },
+  { name: "cebersoft", logo: "/client/cebersoft.png" },
+  { name: "sewiwi", logo: "/client/sewiwi.png" },
+  { name: "Pandawa", logo: "/client/pandawa.jpeg" },
+];
+
+const partnerLogos = [
+  { name: "fiberstar", logo: "/partner/fiberstar.png" },
+  { name: "hsp", logo: "/partner/hsp.jpg" },
+  { name: "iconplus", logo: "/partner/iconplus.png" },
+  { name: "iforte", logo: "/partner/iforte.png" },
+  { name: "linknet", logo: "/partner/linknet.png" },
+  { name: "lintasarta", logo: "/partner/lintasarta.png" },
+  { name: "rbn", logo: "/partner/rbn.png" },
+];
 ---
 
 <BaseLayout>
   <HeroSection client:load>
     <Image src={"/laroslogo.png"} alt="Laros" width={500} height={500} />
   </HeroSection>
-  <ClientShowcase client:load />
+  <ClientShowcase
+    logos={logos}
+    title="Pilihan Utama Lembaga Dan Bisnis"
+    client:load
+  />
   <FeaturesSection client:load />
   <PricingSection client:load />
   <AboutSection client:load />
   <ClientReviews client:load />
   <FAQSection client:load />
+  <ClientShowcase logos={partnerLogos} title="Partner Kami" client:load />
   <ContactSection client:load />
 </BaseLayout>
