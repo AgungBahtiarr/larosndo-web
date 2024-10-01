@@ -5,16 +5,16 @@ import ClientShowcase from "@/components/client-showcase";
 import FeaturesSection from "@/components/feature";
 import PricingSection from "@/components/pricing";
 import AboutSection from "@/components/about";
-import ClientReviews from "@/components/testimonial";
+import ClientReviews from "@/components/testimonial.astro";
 import FAQSection from "@/components/faq";
 import ContactSection from "@/components/contact";
 import { Image } from "astro:assets";
 
 const logos = [
-  { name: "cli", logo: "client/logocli.png" },
-  { name: "swin", logo: "client/logo_swin.png" },
+  { name: "cli", logo: "/client/logocli.png" },
+  { name: "swin", logo: "/client/logo_swin.png" },
   { name: "sewiwi", logo: "/client/sewiwi.png" },
-  { name: "SMKN Glagah", logo: "/client/smkglagah.jpg" },
+  { name: "SMKN Glagah", logo: "/client/glagah.png" },
   { name: "SMKN 1 BWI", logo: "/client/smkn1bwi.jpg" },
   { name: "Satelit", logo: "/client/logo-satelit.png" },
   { name: "SMK 17 Cluring", logo: "/client/smk17cluring.png" },
@@ -48,12 +48,42 @@ const partnerLogos = [
     logos={logos}
     title="Pilihan Utama Lembaga Dan Bisnis"
     client:load
-  />
+  >
+    {
+      logos
+        .concat()
+        .map((logo) => (
+          <Image
+            src={logo.logo}
+            alt={`${logo.name} logo`}
+            class="max-w-[310px] max-h-[100px] object-contain"
+            loading="lazy"
+            width={500}
+            height={500}
+          />
+        ))
+    }</ClientShowcase
+  >
   <FeaturesSection client:load />
   <PricingSection client:load />
   <AboutSection client:load />
-  <ClientReviews client:load />
+  <ClientReviews />
   <FAQSection client:load />
-  <ClientShowcase logos={partnerLogos} title="Partner Kami" client:load />
+  <ClientShowcase logos={partnerLogos} title="Partner Kami" client:load>
+    {
+      partnerLogos
+        .concat()
+        .map((logo, index) => (
+          <Image
+            src={logo.logo}
+            alt={`${logo.name} logo`}
+            class="max-w-[310px] max-h-[100px] object-contain"
+            loading="lazy"
+            width={500}
+            height={500}
+          />
+        ))
+    }
+  </ClientShowcase>
   <ContactSection client:load />
 </BaseLayout>

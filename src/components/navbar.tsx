@@ -6,7 +6,7 @@ const Navbar = ({ theme, toggleTheme, isMenuOpen, setIsMenuOpen }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <img className="h-12" src="laroslogo.png" alt="" />
+            <img className="h-12" src="laroslogo.png" alt="Laros Ae" />
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <NavItems />

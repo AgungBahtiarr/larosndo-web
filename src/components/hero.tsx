@@ -69,9 +69,9 @@ const GoogleGeminiEffect = (props) => {
       {/* <Gradient mousePosition={mousePosition} /> */}
       <div className="relative z-30 flex flex-col items-center justify-center text-center">
         <div className="mb-8 mx-8 md:mx-0">{props.children}</div>
-        <p className="text-xl md:text-2xl dark:text-slate-200 mb-8 max-w-3xl mx-auto">
+        <div className="text-xl md:text-2xl dark:text-slate-200 mb-8 max-w-3xl mx-auto">
           Connected to the <Cover>future</Cover>
-        </p>
+        </div>
         <a
           href="#pricing"
           className="bg-[#fb923c] text-white hover:bg-[#f97316] font-bold py-3 px-6 rounded-full text-lg transition duration-300 inline-block"

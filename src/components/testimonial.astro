@@ -1,0 +1,89 @@
+---
+import { StarIcon } from "lucide-react";
+
+const reviews = [
+  {
+    name: "Rifqi Simanjuntak",
+    role: "CEO, TechCorp",
+    content:
+      "Larosndo has transformed our business connectivity. Their high-speed internet and reliable service have been crucial to our success.",
+    rating: 5,
+  },
+  {
+    name: "Ihwan Persneleng",
+    role: "Homeowner",
+    content:
+      "I've never experienced such fast and stable internet at home. Larosndo's customer service is top-notch too!",
+    rating: 5,
+  },
+  {
+    name: "Ilham Soundsystem",
+    role: "Small Business Owner",
+    content:
+      "Switching to Larosndo was the best decision for my business. Their internet speed and uptime are unmatched.",
+    rating: 4,
+  },
+  {
+    name: "Agung Windows",
+    role: "Remote Worker",
+    content:
+      "As someone who works from home, having reliable internet is crucial. Larosndo delivers consistently excellent service.",
+    rating: 5,
+  },
+];
+---
+
+<section
+  class="py-20 bg-gray-50 dark:bg-gray-800 dark:bg-dot-white/[0.2] bg-dot-black/[0.2]"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2
+      class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12"
+    >
+      Apa yang dikatakan mitra kami
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        reviews.map((review, index) => (
+          // <TestimonialCard key={index} review={review} />
+          <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
+            <div class="flex items-center mb-4 ">
+              <div class="mr-4">
+                <img
+                  src={`https://i.pravatar.cc/60?img=${Math.floor(
+                    Math.random() * 70,
+                  )}`}
+                  alt={review.name}
+                  class="w-12 h-12 rounded-full"
+                />
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                  {review.name}
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  {review.role}
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              {review.content}
+            </p>
+            <div class="flex items-center">
+              {[...Array(5)].map((_, i) => (
+                <StarIcon
+                  key={i}
+                  className={`w-5 h-5 ${
+                    i < review.rating
+                      ? "text-[#fb923c]"
+                      : "text-gray-300 dark:text-gray-600"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

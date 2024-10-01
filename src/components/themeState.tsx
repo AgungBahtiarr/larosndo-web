@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/navbar";
+import { Image } from "astro:assets";
 
 export function ThemeState(props) {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleTheme = () => {
@@ -25,7 +26,6 @@ export function ThemeState(props) {
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />
-
       {props.children}
     </div>
   );
