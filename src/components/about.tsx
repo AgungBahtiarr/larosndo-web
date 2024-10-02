@@ -48,7 +48,7 @@ const AboutSection = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <div className="rounded-lg py-20 px-8 bg-[url('/server.jpeg')] h-[464px] bg-cover"></div>
+            <div className="rounded-lg py-20 px-8 bg-[url('/server.jpeg')] h-[464px] bg-cover bg-bottom"></div>
             <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
               <p className="text-2xl font-bold text-[#fb923c]">10+ Tahun</p>
               <p className="text-sm text-gray-600 dark:text-gray-400">
