@@ -4,7 +4,6 @@ const PricingSection = () => {
   const plans = [
     {
       name: "Basic",
-      price: 29.99,
       features: [
         "50 Mbps download speed",
         "Unlimited data",
@@ -14,7 +13,6 @@ const PricingSection = () => {
     },
     {
       name: "Pro",
-      price: 49.99,
       features: [
         "250 Mbps download speed",
         "Unlimited data",
@@ -25,7 +23,6 @@ const PricingSection = () => {
     },
     {
       name: "Premium",
-      price: 79.99,
       features: [
         "1 Gbps download speed",
         "Unlimited data",
@@ -60,12 +57,6 @@ const PricingCard = ({ plan }) => {
         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
           {plan.name}
         </h3>
-        <p className="text-4xl font-bold text-[#fb923c] dark:text-[#fb923c] mb-6">
-          ${plan.price}
-          <span className="text-lg font-normal text-gray-600 dark:text-gray-400">
-            /mo
-          </span>
-        </p>
         <ul className="space-y-3 mb-6">
           {plan.features.map((feature, index) => (
             <li

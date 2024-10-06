@@ -70,7 +70,7 @@ const GoogleGeminiEffect = (props) => {
       <div className="relative z-30 flex flex-col items-center justify-center text-center">
         <div className="mb-8 mx-8 md:mx-0">{props.children}</div>
         <div className="text-xl md:text-2xl dark:text-slate-200 mb-8 max-w-3xl mx-auto">
-          <Cover>Connected</Cover> a better future
+          <Cover>Connected</Cover> to a better future
         </div>
         <a
           href="#pricing"
