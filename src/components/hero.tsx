@@ -10,7 +10,6 @@ import {
   Smartphone,
   Laptop,
 } from "lucide-react";
-import { Cover } from "./ui/cover";
 import { Boxes } from "./ui/background-boxes";
 
 const HeroSection = (props) => {
@@ -70,7 +69,7 @@ const GoogleGeminiEffect = (props) => {
       <div className="relative z-30 flex flex-col items-center justify-center text-center">
         <div className="mb-8 mx-8 md:mx-0">{props.children}</div>
         <div className="text-xl md:text-2xl dark:text-slate-200 mb-8 max-w-3xl mx-auto">
-          <Cover>Connected</Cover> to a better future
+          Connected to a better future
         </div>
         <a
           href="#pricing"
@@ -82,16 +81,5 @@ const GoogleGeminiEffect = (props) => {
     </div>
   );
 };
-
-// const Gradient = ({ mousePosition }) => {
-//   return (
-//     <div
-//       className="absolute inset-0 z-10"
-//       style={{
-//         background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(251, 146, 60, 0.3), transparent 10%)`,
-//       }}
-//     />
-//   );
-// };
 
 export default HeroSection;
