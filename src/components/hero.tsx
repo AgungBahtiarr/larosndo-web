@@ -14,7 +14,7 @@ import { Boxes } from "./ui/background-boxes";
 
 const HeroSection = (props) => {
   return (
-    <div className="h-[90vh] w-full dark:bg-black bg-white relative flex items-center justify-center overflow-hidden">
+    <div className="h-[50vh] w-full dark:bg-black bg-white relative flex items-center justify-center overflow-hidden">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div className="relative z-10 w-full">
         <GoogleGeminiEffect children={props.children} />
@@ -62,13 +62,13 @@ const GoogleGeminiEffect = (props) => {
     //   onMouseMove={handleMouseMove}
     //   className="h-[90vh] relative overflow-hidden bg-white dark:bg-slate-900 flex items-center justify-center"
     // >
-    <div className="h-[90vh] relative overflow-hidden bg-white dark:bg-slate-900 flex items-center justify-center">
+    <div className="h-[50vh] relative overflow-hidden bg-white dark:bg-slate-900 flex items-center justify-center">
       <Boxes />
       <div className="absolute inset-0 w-full h-full bg-white dark:bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
       {/* <Gradient mousePosition={mousePosition} /> */}
       <div className="relative z-30 flex flex-col items-center justify-center text-center">
         <div className="mb-8 mx-8 md:mx-0">{props.children}</div>
-        <div className="text-xl md:text-2xl dark:text-slate-200 mb-8 max-w-3xl mx-auto">
+        <div className="text-lg sm:text-xl md:text-2xl dark:text-slate-200 mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto px-4 sm:px-6 text-center">
           Connected to a better future
         </div>
         <a

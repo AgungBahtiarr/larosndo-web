@@ -45,9 +45,10 @@ const partnerLogos = [
 ---
 
 <BaseLayout>
-  <HeroSection client:load>
-    <Image src={"/favicon.png"} alt="Laros" width={200} height={200} />
-  </HeroSection>
+    <HeroSection client:load>
+        <Image src={"/laros.png"} alt="Laros" width={150} height={150} />
+    </HeroSection>
+  <ClientReviews />
   <ClientShowcase
     logos={logos}
     title="Pilihan Utama Lembaga Dan Bisnis"
@@ -71,7 +72,6 @@ const partnerLogos = [
   <FeaturesSection client:load />
   <PricingSection client:load />
   <AboutSection client:load />
-  <ClientReviews />
   <FAQSection client:load />
   <ClientShowcase logos={partnerLogos} title="Partner Kami" client:load>
     {
