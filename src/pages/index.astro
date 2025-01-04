@@ -46,10 +46,19 @@ const partnerLogos = [
 ---
 
 <BaseLayout>
-    <HeroSection client:load>
-        <Image src={"/laros.png"} alt="Laros" width={150} height={150} />
-    </HeroSection>
-  <ClientReviews />
+  <HeroSection client:load>
+    <Image src={"/laros.png"} alt="Laros" width={150} height={150} />
+  </HeroSection>
+  <!-- <ClientReviews /> -->
+  <div>
+    <script src="https://static.elfsight.com/platform/platform.js" async
+    ></script>
+    <div
+      class="elfsight-app-193b3701-5f67-4485-bb25-0a8c09b0269a"
+      data-elfsight-app-lazy
+    >
+    </div>
+  </div>
   <ClientShowcase
     logos={logos}
     title="Pilihan Utama Lembaga Dan Bisnis"
