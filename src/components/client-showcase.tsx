@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 
 const ClientShowcase = (props) => {
-  const logos = props.logos;
-
   return (
-    <section className=" py-20 dark:bg-[#1f2937]">
+    <section className="py-20 dark:bg-[#1f2937]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
           {props.title}
@@ -13,18 +11,19 @@ const ClientShowcase = (props) => {
           <motion.div
             className="flex space-x-16 absolute"
             animate={{
-              x: [0, -1920],
+              x: ["0%", "-50%"]
             }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 30,
+                duration: 40,
                 ease: "linear",
               },
             }}
           >
             {props.children}
+            {props.children} {/* Duplikasi children langsung di dalam render */}
           </motion.div>
         </div>
       </div>
