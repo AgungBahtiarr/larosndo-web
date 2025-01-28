@@ -2,12 +2,45 @@
 import "@/styles/globals.css";
 import ThemeState from "@/components/themeState";
 import Footer from "@/components/Footer.astro";
+import { SEO } from "astro-seo";
 ---
 
 <html lang="en">
   <head>
+    <SEO
+      title="PT Lare Osing Ndo | Penyedia Layanan Internet Banyuwangi"
+      description="PT Lare Osing Ndo adalah penyedia layanan internet (ISP) terpercaya di Banyuwangi dengan koneksi stabil, kecepatan tinggi, dan layanan 24/7"
+      openGraph={{
+        basic: {
+          title: "PT Lare Osing Ndo | ISP Terbaik Banyuwangi",
+          type: "website",
+          image: "/laros.png",
+        },
+        optional: {
+          description:
+            "Solusi internet cepat, stabil & terjangkau untuk rumah dan bisnis di Banyuwangi",
+          locale: "id_ID",
+          siteName: "PT Lare Osing Ndo",
+        },
+      }}
+      extend={{
+        link: [
+          { rel: "icon", href: "/favicon/favicon.ico" },
+          { rel: "canonical", href: "https://laros.net.id" },
+        ],
+        meta: [
+          { name: "viewport", content: "width=device-width, initial-scale=1" },
+          {
+            name: "keywords",
+            content:
+              "ISP, internet service provider, wifi, internet broadband, internet banyuwangi, internet fiber optik, internet cepat, internet bisnis, internet rumah, laros, lare osing, rt/rw net banyuwangi, internet stabil",
+          },
+          { name: "author", content: "PT Lare Osing Ndo" },
+        ],
+      }}
+    />
     <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>PT. LARE OSING NDO</title>
