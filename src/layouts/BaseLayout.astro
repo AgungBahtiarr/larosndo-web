@@ -3,49 +3,223 @@ import "@/styles/globals.css";
 import ThemeState from "@/components/themeState";
 import Footer from "@/components/Footer.astro";
 import { SEO } from "astro-seo";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "PT Lare Osing Ndo | ISP Terbaik Banyuwangi - Internet Cepat & Stabil",
+  description = "PT Lare Osing Ndo adalah penyedia layanan internet (ISP) terpercaya di Banyuwangi dengan koneksi fiber optik berkecepatan tinggi, layanan 24/7, dan harga terjangkau untuk rumah & bisnis.",
+  image = "/og-image.jpg",
+  type = "website",
+  noindex = false,
+} = Astro.props as Props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site);
 ---
 
-<html lang="en">
+<html lang="id">
   <head>
     <SEO
-      title="PT Lare Osing Ndo."
-      description="PT Lare Osing Ndo adalah penyedia layanan internet (ISP) terpercaya di Banyuwangi dengan koneksi stabil, kecepatan tinggi, dan layanan 24/7"
+      title={title}
+      description={description}
+      canonical={canonicalURL.href}
+      noindex={noindex}
+      nofollow={noindex}
       openGraph={{
         basic: {
-          title: "PT Lare Osing Ndo | ISP Terbaik Banyuwangi",
-          type: "website",
-          image: "/laros.png",
+          title: title,
+          type: type,
+          image: imageURL.href,
+          url: canonicalURL.href,
         },
         optional: {
-          description:
-            "Solusi internet cepat, stabil & terjangkau untuk rumah dan bisnis di Banyuwangi",
+          description: description,
           locale: "id_ID",
-          siteName: "PT Lare Osing Ndo.",
+          siteName: "PT Lare Osing Ndo",
+        },
+        image: {
+          alt: "PT Lare Osing Ndo - ISP Terpercaya Banyuwangi",
+          width: 1200,
+          height: 630,
         },
       }}
       extend={{
         link: [
-          { rel: "icon", href: "/favicon/favicon.ico" },
-          { rel: "canonical", href: "https://laros.net.id" },
+          { rel: "icon", type: "image/x-icon", href: "/favicon/favicon.ico" },
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "32x32",
+            href: "/favicon/favicon-32x32.png",
+          },
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "16x16",
+            href: "/favicon/favicon-16x16.png",
+          },
+          {
+            rel: "apple-touch-icon",
+            sizes: "180x180",
+            href: "/favicon/apple-touch-icon.png",
+          },
+          { rel: "sitemap", href: "/sitemap-index.xml" },
+          { rel: "dns-prefetch", href: "//fonts.googleapis.com" },
+          { rel: "dns-prefetch", href: "//www.google-analytics.com" },
         ],
         meta: [
-          { name: "viewport", content: "width=device-width, initial-scale=1" },
+          {
+            name: "viewport",
+            content: "width=device-width, initial-scale=1.0",
+          },
+          { name: "generator", content: Astro.generator },
           {
             name: "keywords",
             content:
-              "ISP,isp banyuwangi,isp laros,laros net,internet cepat banyuwangi, internet service provider, wifi, internet broadband, internet banyuwangi, internet fiber optik, internet cepat, internet bisnis, internet rumah, laros, lare osing, rt/rw net banyuwangi, internet stabil",
+              "ISP Banyuwangi, internet cepat Banyuwangi, PT Lare Osing Ndo, Laros Net, internet fiber optik, internet service provider, wifi Banyuwangi, broadband internet, internet bisnis Banyuwangi, internet rumah murah, RT/RW Net Banyuwangi, internet unlimited, paket internet, instalasi wifi, jaringan internet stabil, provider internet terbaik, internet 24 jam, layanan internet profesional",
           },
           { name: "author", content: "PT Lare Osing Ndo" },
+          { name: "publisher", content: "PT Lare Osing Ndo" },
+          {
+            name: "copyright",
+            content: "© 2024 PT Lare Osing Ndo. All rights reserved.",
+          },
+          {
+            name: "robots",
+            content: noindex
+              ? "noindex, nofollow"
+              : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+          },
+          {
+            name: "googlebot",
+            content: noindex ? "noindex, nofollow" : "index, follow",
+          },
+          {
+            name: "bingbot",
+            content: noindex ? "noindex, nofollow" : "index, follow",
+          },
+          { name: "geo.region", content: "ID-JI" },
+          { name: "geo.placename", content: "Banyuwangi" },
+          { name: "geo.position", content: "-8.2191;114.3691" },
+          { name: "ICBM", content: "-8.2191, 114.3691" },
+          { name: "theme-color", content: "#1e40af" },
+          { name: "msapplication-TileColor", content: "#1e40af" },
         ],
       }}
     />
-    <meta charset="utf-8" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>PT. LARE OSING NDO.</title>
+
+    <!-- Structured Data - Organization -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "PT Lare Osing Ndo",
+        alternateName: "Laros Net",
+        url: "https://laros.net.id",
+        logo: "https://laros.net.id/laros.png",
+        description:
+          "Penyedia layanan internet (ISP) terpercaya di Banyuwangi dengan koneksi fiber optik berkecepatan tinggi dan layanan 24/7",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Banyuwangi",
+          addressRegion: "Jawa Timur",
+          addressCountry: "ID",
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "customer service",
+          availableLanguage: ["Indonesian"],
+        },
+        sameAs: [
+          "https://www.facebook.com/larosnet",
+          "https://www.instagram.com/larosnet",
+        ],
+        serviceArea: {
+          "@type": "City",
+          name: "Banyuwangi",
+        },
+        makesOffer: {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Internet Service Provider",
+            description: "Layanan internet fiber optik untuk rumah dan bisnis",
+          },
+        },
+      })}
+    />
+
+    <!-- Structured Data - Local Business -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "PT Lare Osing Ndo",
+        image: "https://laros.net.id/laros.png",
+        telephone: "+6282141623298",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress:
+            "Perum Griya Gurit Permai Blok II-16 Pengantigan, Rogojampi, Kab. Banyuwangi, Jawa Timur 68462",
+          addressLocality: "Banyuwangi",
+          addressRegion: "Jawa Timur",
+          postalCode: "68411",
+          addressCountry: "ID",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: -8.2191,
+          longitude: 114.3691,
+        },
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "00:00",
+          closes: "23:59",
+        },
+        priceRange: "$$",
+        category: "Internet Service Provider",
+      })}
+    />
+
+    <!-- Website Schema -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "PT Lare Osing Ndo",
+        alternateName: "Laros Net",
+        url: "https://laros.net.id",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: "https://laros.net.id/search?q={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
+        },
+      })}
+    />
   </head>
+
   <body>
     <ThemeState client:load>
       <slot />
