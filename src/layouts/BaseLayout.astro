@@ -22,6 +22,7 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(image, Astro.site);
+const currentYear = new Date().getFullYear();
 ---
 
 <html lang="id">
@@ -89,7 +90,7 @@ const imageURL = new URL(image, Astro.site);
           { name: "publisher", content: "PT Lare Osing Ndo" },
           {
             name: "copyright",
-            content: "© 2024 PT Lare Osing Ndo. All rights reserved.",
+            content: `© ${currentYear} PT Lare Osing Ndo. All rights reserved.`,
           },
           {
             name: "robots",
