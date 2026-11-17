@@ -8,45 +8,45 @@ import {
 const FAQSection = () => {
   const faqs = [
     {
-      question: "What internet speeds do you offer?",
+      question: "Pilihan kecepatan internet apa saja yang tersedia?",
       answer:
-        "We offer a range of speeds to suit different needs, from 50 Mbps for basic browsing to 1 Gbps for heavy users and businesses. Our team can help you choose the best plan for your usage.",
+        "Kami menyediakan paket mulai dari 50 Mbps untuk kebutuhan rumah tangga hingga 1 Gbps untuk bisnis dan institusi. Tim kami siap membantu merekomendasikan paket sesuai jumlah perangkat dan aktivitas Anda.",
     },
     {
-      question: "Is there a data cap on your internet plans?",
+      question: "Apakah ada batasan kuota (FUP) pada paket internet?",
       answer:
-        "No, all our internet plans come with unlimited data. We believe in providing our customers with unrestricted access to the internet without worrying about data limits.",
+        "Tidak ada. Seluruh paket internet kami bersifat unlimited tanpa batasan kuota, sehingga Anda dapat bekerja, belajar, dan streaming tanpa khawatir kecepatan turun karena batas kuota.",
     },
     {
-      question: "Do you offer bundled services with TV or phone?",
+      question: "Apakah tersedia layanan khusus untuk bisnis atau sekolah?",
       answer:
-        "Yes, we offer various bundle options that include high-speed internet, TV, and phone services. These bundles can provide significant savings compared to purchasing services separately.",
+        "Ya, kami menyediakan layanan dedicated maupun broadband bisnis dengan dukungan SLA, IP Statis, dan penanganan teknis prioritas untuk sekolah, kampus, kantor, maupun instansi.",
     },
     {
-      question: "What is your service availability area?",
+      question: "Wilayah mana saja yang sudah terjangkau jaringan Laros Net?",
       answer:
-        "We currently serve major urban areas and are continuously expanding our network to reach more suburban and rural locations. You can check service availability for your address on our website or by contacting our customer service team.",
+        "Saat ini jaringan kami menjangkau berbagai kecamatan di Kabupaten Banyuwangi dan terus diperluas. Anda dapat mengecek ketersediaan tiang/ODP di alamat Anda langsung melalui WhatsApp tim kami.",
     },
     {
-      question: "How long does installation typically take?",
+      question: "Berapa lama proses pemasangan baru berlangsung?",
       answer:
-        "Standard installation usually takes 2-3 hours. However, this can vary depending on your home's setup and the services you're having installed. We'll provide you with a more accurate time estimate when you schedule your installation.",
+        "Pemasangan standar umumnya memakan waktu 2–3 jam setelah jadwal survei dan penarikan kabel disepakati. Tim teknisi kami akan mengonfirmasi estimasi waktu sebelum berangkat ke lokasi.",
     },
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900 ">
+    <section className="py-20 bg-gray-50 dark:bg-gray-800/60">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center text-gray-900 dark:text-white mb-10 text-balance">
           Pertanyaan Umum
         </h2>
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-gray-900 dark:text-white">
+            <AccordionItem key={faq.question} value={`item-${index}`}>
+              <AccordionTrigger className="text-left text-base font-medium text-gray-900 dark:text-white">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-600 dark:text-gray-300">
+              <AccordionContent className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

@@ -52,12 +52,11 @@ const partnerLogos = [
 ---
 
 <BaseLayout>
-  <HeroSection client:load>
-    <Image src={"/laros.png"} alt="Laros" width={150} height={150} />
+  <HeroSection>
+    <Image src={"/laros.png"} alt="Laros Net" width={140} height={140} loading="eager" />
   </HeroSection>
-  <!-- <ClientReviews /> -->
   <div>
-    <script src="https://static.elfsight.com/platform/platform.js" async
+    <script is:inline src="https://static.elfsight.com/platform/platform.js" async
     ></script>
     <div
       class="elfsight-app-193b3701-5f67-4485-bb25-0a8c09b0269a"
@@ -65,45 +64,37 @@ const partnerLogos = [
     >
     </div>
   </div>
-  <ClientShowcase
-    logos={logos}
-    title="Pilihan Utama Lembaga Dan Bisnis"
-    client:load
-  >
+  <ClientShowcase title="Pilihan Utama Lembaga dan Bisnis">
     {
-      logos
-        .concat()
-        .map((logo) => (
-          <Image
-            src={logo.logo}
-            alt={`${logo.name} logo`}
-            class="max-w-[310px] max-h-[100px] object-contain"
-            loading="lazy"
-            width={500}
-            height={500}
-          />
-        ))
-    }</ClientShowcase
-  >
-  <FeaturesSection client:load />
-  <PricingSection client:load />
-  <AboutSection client:load />
-  <FAQSection client:load />
-  <ClientShowcase logos={partnerLogos} title="Partner Kami" client:load>
-    {
-      partnerLogos
-        .concat()
-        .map((logo, index) => (
-          <Image
-            src={logo.logo}
-            alt={`${logo.name} logo`}
-            class="max-w-[310px] max-h-[100px] object-contain"
-            loading="lazy"
-            width={500}
-            height={500}
-          />
-        ))
+      logos.map((logo) => (
+        <Image
+          src={logo.logo}
+          alt={`Logo ${logo.name}`}
+          class="max-w-[200px] max-h-[80px] w-auto h-auto object-contain"
+          loading="lazy"
+          width={200}
+          height={100}
+        />
+      ))
     }
   </ClientShowcase>
-  <ContactSection client:load />
+  <FeaturesSection />
+  <PricingSection />
+  <AboutSection client:visible />
+  <FAQSection client:visible />
+  <ClientShowcase title="Partner Kami">
+    {
+      partnerLogos.map((logo) => (
+        <Image
+          src={logo.logo}
+          alt={`Logo ${logo.name}`}
+          class="max-w-[200px] max-h-[80px] w-auto h-auto object-contain"
+          loading="lazy"
+          width={200}
+          height={100}
+        />
+      ))
+    }
+  </ClientShowcase>
+  <ContactSection />
 </BaseLayout>

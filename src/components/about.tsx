@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useState, type ReactNode } from "react";
 import {
   LightbulbIcon,
   UsersIcon,
@@ -8,97 +7,132 @@ import {
   GlobeIcon,
   RssIcon,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+
+type TabKey = "mission" | "team" | "future";
 
 const AboutSection = () => {
-  const [activeTab, setActiveTab] = useState("mission");
+  const [activeTab, setActiveTab] = useState<TabKey>("mission");
+  const prefersReducedMotion = useReducedMotion();
 
-  const tabContent = {
+  const tabContent: Record<
+    TabKey,
+    { title: string; content: string; icon: ReactNode }
+  > = {
     mission: {
       title: "Misi Kami",
       content:
-        "At Larosndo, we're on a mission to bridge the digital divide by providing lightning-fast, reliable internet access to both urban and rural areas. We believe that everyone deserves to be connected to the world of opportunities that the internet offers.",
-      icon: <LightbulbIcon className="h-12 w-12 text-[#fb923c]" />,
+        "Di Laros Net, kami berkomitmen menjembatani kesenjangan digital dengan menghadirkan akses internet fiber optik yang cepat dan stabil hingga ke area perkotaan maupun pedesaan Banyuwangi.",
+      icon: <LightbulbIcon className="h-8 w-8 text-brand shrink-0" aria-hidden="true" />,
     },
     team: {
-      title: "Our Team",
+      title: "Tim Kami",
       content:
-        "Behind Larosndo's success is a diverse team of passionate tech enthusiasts, network engineers, and customer service experts. Together, we work tirelessly to ensure that you stay connected to what matters most.",
-      icon: <UsersIcon className="h-12 w-12 text-[#fb923c]" />,
+        "Di balik layanan Laros Net terdapat tim network engineer, teknisi lapangan lokal, dan layanan pelanggan yang sigap menjaga koneksi Anda tetap stabil setiap hari.",
+      icon: <UsersIcon className="h-8 w-8 text-brand shrink-0" aria-hidden="true" />,
     },
     future: {
-      title: "Our Future",
+      title: "Masa Depan",
       content:
-        "As we look ahead, we're committed to pushing the boundaries of what's possible in internet connectivity. From exploring cutting-edge technologies to expanding our network reach, we're always innovating to bring you the internet of tomorrow, today.",
-      icon: <TrendingUpIcon className="h-12 w-12 text-[#fb923c]" />,
+        "Kami terus memperluas jangkauan jaringan fiber optik dan memperbarui perangkat infrastruktur agar masyarakat dan bisnis di Banyuwangi siap menghadapi kebutuhan digital masa depan.",
+      icon: <TrendingUpIcon className="h-8 w-8 text-brand shrink-0" aria-hidden="true" />,
     },
   };
 
+  const tabKeys = Object.keys(tabContent) as TabKey[];
+
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
+    <section id="about" className="py-20 bg-white dark:bg-gray-900 overflow-x-clip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 text-balance">
             Tentang LarosNdo
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Menghadirkan solusi internet mutakhir sejak 2020
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Menghadirkan solusi internet fiber optik mutakhir di Banyuwangi sejak 2020
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div className="relative">
-            <div className="rounded-lg py-20 px-8 bg-[url('/server.jpeg')] h-[464px] bg-cover bg-bottom"></div>
-            <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
-              <p className="text-2xl font-bold text-[#fb923c]">10+ Tahun</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Pengalaman
+            <div
+              role="img"
+              aria-label="Infrastruktur server jaringan PT Lare Osing Ndo"
+              className="rounded-xl py-20 px-8 bg-[url('/server.jpeg')] h-[360px] sm:h-[440px] bg-cover bg-bottom border border-gray-200 dark:border-gray-800"
+            />
+            <div className="absolute bottom-4 right-4 md:-bottom-5 md:-right-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-xl shadow-lg">
+              <p className="text-2xl font-bold tabular-nums text-brand">
+                Sejak 2020
+              </p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Melayani Banyuwangi
               </p>
             </div>
           </div>
 
           <div>
-            <div className="flex space-x-4 mb-6">
-              {Object.keys(tabContent).map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    activeTab === tab
-                      ? "bg-[#fb923c] text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
-                  }`}
-                >
-                  {tabContent[tab].title}
-                </button>
-              ))}
+            <div
+              role="tablist"
+              aria-label="Informasi tentang LarosNdo"
+              className="flex flex-wrap gap-2 mb-6"
+            >
+              {tabKeys.map((tab) => {
+                const isSelected = activeTab === tab;
+                return (
+                  <button
+                    key={tab}
+                    type="button"
+                    role="tab"
+                    id={`tab-${tab}`}
+                    aria-selected={isSelected}
+                    aria-controls={`panel-${tab}`}
+                    onClick={() => setActiveTab(tab)}
+                    className={`min-h-10 px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
+                      isSelected
+                        ? "bg-brand text-brand-foreground"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                    }`}
+                  >
+                    {tabContent[tab].title}
+                  </button>
+                );
+              })}
             </div>
 
             <motion.div
               key={activeTab}
-              initial={{ opacity: 0, y: 20 }}
+              role="tabpanel"
+              id={`panel-${activeTab}`}
+              aria-labelledby={`tab-${activeTab}`}
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg"
+              transition={{ duration: prefersReducedMotion ? 0 : 0.2, ease: "easeOut" }}
+              className="bg-gray-50 dark:bg-gray-800 border border-gray-200/80 dark:border-gray-700/70 p-6 rounded-xl"
             >
-              <div className="flex items-center mb-4">
+              <div className="flex items-center gap-3 mb-3">
                 {tabContent[activeTab].icon}
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white ml-4">
+                <h3 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   {tabContent[activeTab].title}
                 </h3>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                 {tabContent[activeTab].content}
               </p>
             </motion.div>
 
             <div className="mt-8 grid grid-cols-3 gap-4">
               <FeatureItem
-                icon={<WifiIcon />}
-                text="Cutting-edge fiber optic"
+                icon={<WifiIcon className="h-5 w-5" aria-hidden="true" />}
+                text="Fiber optik andal"
               />
-              <FeatureItem icon={<GlobeIcon />} text="Expanding coverage" />
-              <FeatureItem icon={<RssIcon />} text="Innovative solutions" />
+              <FeatureItem
+                icon={<GlobeIcon className="h-5 w-5" aria-hidden="true" />}
+                text="Jangkauan terus meluas"
+              />
+              <FeatureItem
+                icon={<RssIcon className="h-5 w-5" aria-hidden="true" />}
+                text="Solusi inovatif"
+              />
             </div>
           </div>
         </div>
@@ -107,10 +141,10 @@ const AboutSection = () => {
   );
 };
 
-const FeatureItem = ({ icon, text }) => (
+const FeatureItem = ({ icon, text }: { icon: ReactNode; text: string }) => (
   <div className="flex flex-col items-center text-center">
-    <div className="text-[#fb923c] mb-2">{icon}</div>
-    <p className="text-sm text-gray-600 dark:text-gray-400">{text}</p>
+    <div className="text-brand mb-2">{icon}</div>
+    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">{text}</p>
   </div>
 );
 

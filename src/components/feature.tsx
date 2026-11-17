@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import {
   WifiIcon,
   ShieldCheckIcon,
@@ -6,47 +7,78 @@ import {
 } from "lucide-react";
 
 const FeaturesSection = () => {
+  const features = [
+    {
+      icon: <WifiIcon className="h-6 w-6" aria-hidden="true" />,
+      title: "Internet Berkecepatan Tinggi",
+      description:
+        "Koneksi fiber optik rendah latensi untuk streaming, kerja jarak jauh, dan operasional bisnis tanpa hambatan.",
+    },
+    {
+      icon: <ShieldCheckIcon className="h-6 w-6" aria-hidden="true" />,
+      title: "Keamanan Jaringan Terjaga",
+      description:
+        "Perlindungan jaringan berlapis untuk menjaga stabilitas dan keamanan aktivitas digital Anda.",
+    },
+    {
+      icon: <HeadphonesIcon className="h-6 w-6" aria-hidden="true" />,
+      title: "Dukungan Teknis 24/7",
+      description:
+        "Tim teknisi lokal Banyuwangi selalu siap membantu kapan saja saat Anda membutuhkan penanganan cepat.",
+    },
+    {
+      icon: <RocketIcon className="h-6 w-6" aria-hidden="true" />,
+      title: "Infrastruktur Siap Masa Depan",
+      description:
+        "Jaringan terus diperbarui dengan perangkat kelas enterprise untuk keandalan koneksi jangka panjang.",
+    },
+  ];
+
   return (
-    <section id="features" className="bg-gray-50 dark:bg-gray-800 py-20 ">
+    <section id="features" className="bg-gray-50 dark:bg-gray-800/60 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
-          Layanan Kami
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <FeatureCard
-            icon={<WifiIcon className="h-8 w-8" />}
-            title="High-Speed Internet"
-            description="Experience lightning-fast connectivity for seamless streaming and browsing."
-          />
-          <FeatureCard
-            icon={<ShieldCheckIcon className="h-8 w-8" />}
-            title="Enhanced Security"
-            description="Stay protected with our advanced network security measures."
-          />
-          <FeatureCard
-            icon={<HeadphonesIcon className="h-8 w-8" />}
-            title="24/7 Support"
-            description="Our dedicated team is always ready to assist you round the clock."
-          />
-          <FeatureCard
-            icon={<RocketIcon className="h-8 w-8" />}
-            title="Future-Ready Technology"
-            description="Stay ahead with our cutting-edge infrastructure and constant upgrades."
-          />
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 text-balance">
+            Layanan Kami
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300">
+            Dirancang untuk kebutuhan rumah tangga, instansi pendidikan, dan
+            perusahaan di Banyuwangi.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((item) => (
+            <FeatureCard
+              key={item.title}
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-const FeatureCard = ({ icon, title, description }) => {
+interface FeatureCardProps {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}
+
+const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
   return (
-    <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-      <div className="text-[#fb923c] dark:text-[#fb923c] mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200/80 dark:border-gray-700/70 shadow-sm hover:shadow-md transition-shadow duration-200">
+      <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-orange-50 dark:bg-orange-950/50 text-brand mb-4">
+        {icon}
+      </div>
+      <h3 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white mb-2">
         {title}
       </h3>
-      <p className="text-gray-600 dark:text-gray-300">{description}</p>
+      <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+        {description}
+      </p>
     </div>
   );
 };
