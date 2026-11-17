@@ -1,0 +1,44 @@
+{
+  "$schema": "https://ard.dev/schema/v1.json",
+  "version": "1.0",
+  "name": "PT Lare Osing Ndo",
+  "description": "Penyedia layanan internet (ISP) fiber optik di Banyuwangi, Jawa Timur (AS149714). Menyediakan WiFi rumah tanpa FUP, internet dedicated bisnis, IP Transit BGP, dan Metro-E dengan multi-link backbone dan low latency gaming.",
+  "url": "https://laros.net.id",
+  "llmsTxt": "https://laros.net.id/llms.txt",
+  "sitemap": "https://laros.net.id/sitemap-index.xml",
+  "contact": {
+    "email": "isun@laros.ae",
+    "telephone": "+62-821-4162-3298",
+    "url": "https://wa.me/6282141623298"
+  },
+  "resources": [
+    {
+      "id": "pricing",
+      "name": "Paket & Harga Internet",
+      "description": "Daftar paket WiFi rumah (15-50 Mbps mulai Rp 100.000/bln) dan paket bisnis/sekolah (100 Mbps - 1 Gbps+).",
+      "url": "https://laros.net.id/#pricing",
+      "type": "webpage"
+    },
+    {
+      "id": "coverage",
+      "name": "Cek Jangkauan Banyuwangi",
+      "description": "Daftar kecamatan terjangkau fiber optik PT Lare Osing Ndo di Kabupaten Banyuwangi.",
+      "url": "https://laros.net.id/#coverage",
+      "type": "webpage"
+    },
+    {
+      "id": "credentials",
+      "name": "Kredensial Jaringan & Peering AS149714",
+      "description": "Informasi ASN, sertifikasi KOMDIGI, APJII, MANRS, RPKI, dan konektivitas IXP.",
+      "url": "https://laros.net.id/#credentials",
+      "type": "webpage"
+    },
+    {
+      "id": "peeringdb",
+      "name": "PeeringDB AS149714",
+      "description": "Profil resmi jaringan AS149714 PT Lare Osing Ndo di PeeringDB.",
+      "url": "https://www.peeringdb.com/net/29921",
+      "type": "external"
+    }
+  ]
+}
