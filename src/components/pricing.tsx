@@ -252,7 +252,15 @@ const PricingSection = () => {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+        {category === "business" && (
+          <p className="mt-6 text-center text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-200">
+            *Syarat dan ketentuan berlaku untuk seluruh paket Bisnis &amp; Sekolah
+            (termasuk hasil survei kelayakan lokasi, biaya instalasi khusus jika
+            ada, dan ketentuan kontrak berlangganan).
+          </p>
+        )}
+
+        <p className="mt-4 text-center text-xs sm:text-sm text-gray-500 dark:text-gray-400">
           *Semua paket tanpa FUP dan gratis survei lokasi. Tersedia juga layanan
           Internet Dedicated, IP Transit BGP, Metro-E, dan Managed Service untuk
           bisnis maupun instansi di Banyuwangi.
