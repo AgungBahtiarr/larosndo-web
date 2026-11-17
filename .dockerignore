@@ -1,0 +1,8 @@
+node_modules
+dist
+.astro
+.git
+.gitignore
+.DS_Store
+*.log
+/tmp
