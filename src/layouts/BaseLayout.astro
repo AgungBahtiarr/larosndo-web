@@ -2,6 +2,7 @@
 import "@/styles/globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/Footer.astro";
+import FloatingWA from "@/components/FloatingWA.astro";
 import { SEO } from "astro-seo";
 
 export interface Props {
@@ -232,5 +233,6 @@ const currentYear = new Date().getFullYear();
       <slot />
     </main>
     <Footer />
+    <FloatingWA />
   </body>
 </html>

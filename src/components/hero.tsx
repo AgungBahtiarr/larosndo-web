@@ -39,6 +39,32 @@ const HeroSection = ({ children }: HeroSectionProps) => {
             Hubungi via WhatsApp
           </a>
         </div>
+        <dl className="mt-12 pt-8 border-t border-gray-200/80 dark:border-gray-800 grid grid-cols-3 gap-6 sm:gap-10 w-full max-w-xl">
+          <div>
+            <dt className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+              Target Uptime
+            </dt>
+            <dd className="text-xl sm:text-2xl font-bold tabular-nums text-gray-900 dark:text-white mt-0.5">
+              99,5%
+            </dd>
+          </div>
+          <div>
+            <dt className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+              Klien Lembaga
+            </dt>
+            <dd className="text-xl sm:text-2xl font-bold tabular-nums text-gray-900 dark:text-white mt-0.5">
+              20+
+            </dd>
+          </div>
+          <div>
+            <dt className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+              Support Lokal
+            </dt>
+            <dd className="text-xl sm:text-2xl font-bold tabular-nums text-gray-900 dark:text-white mt-0.5">
+              24/7
+            </dd>
+          </div>
+        </dl>
       </div>
     </section>
   );

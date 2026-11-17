@@ -10,7 +10,7 @@ const FAQSection = () => {
     {
       question: "Pilihan kecepatan internet apa saja yang tersedia?",
       answer:
-        "Kami menyediakan paket mulai dari 50 Mbps untuk kebutuhan rumah tangga hingga 1 Gbps untuk bisnis dan institusi. Tim kami siap membantu merekomendasikan paket sesuai jumlah perangkat dan aktivitas Anda.",
+        "Untuk paket rumah tersedia pilihan 15 Mbps, 25 Mbps, hingga 50 Mbps, serta paket bisnis & sekolah hingga 1 Gbps. Tim kami siap membantu merekomendasikan paket sesuai jumlah perangkat dan aktivitas Anda.",
     },
     {
       question: "Apakah ada batasan kuota (FUP) pada paket internet?",

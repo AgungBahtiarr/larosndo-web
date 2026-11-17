@@ -4,6 +4,8 @@ import HeroSection from "@/components/hero";
 import ClientShowcase from "@/components/client-showcase";
 import FeaturesSection from "@/components/feature";
 import PricingSection from "@/components/pricing";
+import StepsSection from "@/components/steps";
+import CoverageSection from "@/components/coverage";
 import AboutSection from "@/components/about";
 import FAQSection from "@/components/faq";
 import ContactSection from "@/components/contact";
@@ -32,6 +34,10 @@ const logos = [
   { name: "Riyad", logo: "/client/riyad.png" },
   { name: "cebersoft", logo: "/client/cebersoft.png" },
   { name: "Pandawa", logo: "/client/pandawa.jpeg" },
+  {
+    name: "BPS Banyuwangi",
+    logo: "/client/bpsbwi.svg",
+  },
 ];
 
 const partnerLogos = [
@@ -79,7 +85,9 @@ const partnerLogos = [
     }
   </ClientShowcase>
   <FeaturesSection />
-  <PricingSection />
+  <PricingSection client:visible />
+  <StepsSection />
+  <CoverageSection client:visible />
   <AboutSection client:visible />
   <FAQSection client:visible />
   <ClientShowcase title="Partner Kami">

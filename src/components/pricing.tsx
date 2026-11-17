@@ -1,79 +1,196 @@
+import { useState } from "react";
 import { CheckIcon } from "lucide-react";
+
+type CategoryKey = "home" | "business";
 
 interface Plan {
   name: string;
   speed: string;
+  price: string;
+  period?: string;
   tagline: string;
   recommended?: boolean;
   features: string[];
 }
 
 const PricingSection = () => {
-  const plans: Plan[] = [
-    {
-      name: "Basic",
-      speed: "50 Mbps",
-      tagline: "Ideal untuk penggunaan rumah & belajar online.",
-      features: [
-        "Kecepatan unduh hingga 50 Mbps",
-        "Kuota unlimited tanpa FUP",
-        "Fitur keamanan jaringan dasar",
-        "Dukungan pelanggan 24/7",
-      ],
-    },
-    {
-      name: "Pro",
-      speed: "250 Mbps",
-      tagline: "Pilihan terbaik untuk keluarga & kantor kecil.",
-      recommended: true,
-      features: [
-        "Kecepatan unduh hingga 250 Mbps",
-        "Kuota unlimited tanpa FUP",
-        "Proteksi keamanan jaringan lanjutan",
-        "Dukungan prioritas 24/7",
-        "Gratis sewa modem",
-      ],
-    },
-    {
-      name: "Premium",
-      speed: "1 Gbps",
-      tagline: "Performa maksimal untuk bisnis & institusi.",
-      features: [
-        "Kecepatan unduh hingga 1 Gbps",
-        "Kuota unlimited tanpa FUP",
-        "Proteksi keamanan jaringan lanjutan",
-        "Dukungan VIP 24/7",
-        "Gratis sewa modem & router",
-        "Alamat IP Statis",
-      ],
-    },
-  ];
+  const [category, setCategory] = useState<CategoryKey>("home");
+
+  const plansByCategory: Record<CategoryKey, Plan[]> = {
+    home: [
+      {
+        name: "Basic",
+        speed: "15 Mbps",
+        price: "Rp 100.000",
+        period: "/bulan",
+        tagline: "Ideal untuk penggunaan rumah & belajar online.",
+        features: [
+          "Kecepatan unduh hingga 15 Mbps",
+          "Kuota unlimited tanpa FUP",
+          "Fitur keamanan jaringan dasar",
+          "Dukungan pelanggan 24/7",
+        ],
+      },
+      {
+        name: "Pro",
+        speed: "25 Mbps",
+        price: "Rp 150.000",
+        period: "/bulan",
+        tagline: "Pilihan terbaik untuk keluarga & kerja remote.",
+        recommended: true,
+        features: [
+          "Kecepatan unduh hingga 25 Mbps",
+          "Kuota unlimited tanpa FUP",
+          "Proteksi keamanan jaringan lanjutan",
+          "Dukungan prioritas 24/7",
+          "Gratis sewa modem",
+        ],
+      },
+      {
+        name: "Premium",
+        speed: "50 Mbps",
+        price: "Rp 200.000",
+        period: "/bulan",
+        tagline: "Performa maksimal untuk rumah pintar & kreator.",
+        features: [
+          "Kecepatan unduh hingga 50 Mbps",
+          "Kuota unlimited tanpa FUP",
+          "Proteksi keamanan jaringan lanjutan",
+          "Dukungan VIP 24/7",
+          "Gratis sewa modem & router",
+          "Alamat IP Statis",
+        ],
+      },
+    ],
+    business: [
+      {
+        name: "Bisnis Lite",
+        speed: "100 Mbps",
+        price: "Rp 750.000",
+        period: "/bulan",
+        tagline: "Koneksi stabil untuk kantor, ruko, dan UMKM.",
+        features: [
+          "Bandwidth simetris 100 Mbps",
+          "Kuota unlimited tanpa FUP",
+          "1 Alamat IP Publik Statis",
+          "Dukungan teknis prioritas 24/7",
+        ],
+      },
+      {
+        name: "Bisnis Pro",
+        speed: "300 Mbps",
+        price: "Rp 1.500.000",
+        period: "/bulan",
+        tagline: "Andalan sekolah, klinik, dan perusahaan menengah.",
+        recommended: true,
+        features: [
+          "Bandwidth dedicated 300 Mbps",
+          "Target SLA uptime 99,5%",
+          "IP Publik Statis + monitoring proaktif",
+          "Penanganan teknisi on-site cepat",
+          "Gratis perangkat router enterprise",
+        ],
+      },
+      {
+        name: "Enterprise",
+        speed: "1 Gbps+",
+        price: "Custom",
+        tagline: "Solusi khusus kampus, hotel, dan instansi besar.",
+        features: [
+          "Kapasitas dedicated 1 Gbps ke atas",
+          "Jalur backup fiber ganda (redundancy)",
+          "SLA khusus & account manager",
+          "Dukungan NOC 24/7",
+          "Konfigurasi BGP / VLAN sesuai kebutuhan",
+        ],
+      },
+    ],
+  };
+
+  const activePlans = plansByCategory[category];
 
   return (
     <section id="pricing" className="bg-white dark:bg-gray-900 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 text-balance">
             Pilih Paket Internet Anda
           </h2>
           <p className="text-gray-600 dark:text-gray-300">
-            Konsultasikan kebutuhan bandwidth dan cek cakupan area langsung
-            dengan tim kami.
+            Pilih kategori layanan sesuai kebutuhan dan cek ketersediaan area
+            langsung dengan tim kami.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {plans.map((plan) => (
-            <PricingCard key={plan.name} plan={plan} />
+
+        <div className="flex justify-center mb-10">
+          <div
+            role="tablist"
+            aria-label="Kategori paket internet"
+            className="inline-flex p-1 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+          >
+            <button
+              type="button"
+              role="tab"
+              id="tab-home"
+              aria-selected={category === "home"}
+              aria-controls="panel-pricing"
+              onClick={() => setCategory("home")}
+              className={`min-h-10 px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+                category === "home"
+                  ? "bg-brand text-brand-foreground shadow-sm"
+                  : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              }`}
+            >
+              Paket Rumah
+            </button>
+            <button
+              type="button"
+              role="tab"
+              id="tab-business"
+              aria-selected={category === "business"}
+              aria-controls="panel-pricing"
+              onClick={() => setCategory("business")}
+              className={`min-h-10 px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+                category === "business"
+                  ? "bg-brand text-brand-foreground shadow-sm"
+                  : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              }`}
+            >
+              Bisnis &amp; Sekolah
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="panel-pricing"
+          role="tabpanel"
+          aria-labelledby={category === "home" ? "tab-home" : "tab-business"}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch"
+        >
+          {activePlans.map((plan) => (
+            <PricingCard key={plan.name} plan={plan} category={category} />
           ))}
         </div>
+
+        <p className="mt-8 text-center text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+          *Semua paket tanpa FUP dan gratis survei lokasi. Tarif paket bisnis
+          bersifat estimasi awal dan menyesuaikan kebutuhan lokasi.
+        </p>
       </div>
     </section>
   );
 };
 
-const PricingCard = ({ plan }: { plan: Plan }) => {
+const PricingCard = ({
+  plan,
+  category,
+}: {
+  plan: Plan;
+  category: CategoryKey;
+}) => {
+  const categoryLabel = category === "home" ? "Rumah" : "Bisnis & Sekolah";
   const whatsappText = encodeURIComponent(
-    `Halo Laros Net, saya tertarik berlangganan paket ${plan.name} (${plan.speed}). Mohon info tarif dan ketersediaan area.`,
+    `Halo Laros Net, saya tertarik paket ${categoryLabel} - ${plan.name} (${plan.speed}). Mohon info detail tarif dan ketersediaan area.`,
   );
 
   return (
@@ -95,9 +212,19 @@ const PricingCard = ({ plan }: { plan: Plan }) => {
             </span>
           )}
         </div>
-        <p className="text-3xl font-bold tracking-tight tabular-nums text-gray-900 dark:text-white mb-2">
-          {plan.speed}
+        <p className="text-sm font-semibold text-brand tabular-nums mb-3">
+          Kecepatan hingga {plan.speed}
         </p>
+        <div className="flex items-baseline gap-1 mb-3">
+          <span className="text-3xl font-bold tracking-tight tabular-nums text-gray-900 dark:text-white">
+            {plan.price}
+          </span>
+          {plan.period && (
+            <span className="text-sm text-gray-500 dark:text-gray-400">
+              {plan.period}
+            </span>
+          )}
+        </div>
         <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">
           {plan.tagline}
         </p>
@@ -127,7 +254,7 @@ const PricingCard = ({ plan }: { plan: Plan }) => {
               : "bg-gray-900 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white"
           }`}
         >
-          Tanya Harga &amp; Pasang {plan.name}
+          Pilih Paket {plan.name}
         </a>
       </div>
     </div>
