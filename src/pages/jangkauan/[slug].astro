@@ -1,0 +1,126 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PricingSection from "@/components/pricing";
+import StepsSection from "@/components/steps";
+import { banyuwangiDistricts, type DistrictPage } from "@/data/seo-pages";
+
+export function getStaticPaths() {
+  return banyuwangiDistricts.map((district) => ({
+    params: { slug: district.slug },
+    props: { district },
+  }));
+}
+
+const { district } = Astro.props as { district: DistrictPage };
+const otherDistricts = banyuwangiDistricts.filter((d) => d.slug !== district.slug);
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Beranda", item: "https://laros.net.id/" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: `Jangkauan ${district.name}`,
+      item: `https://laros.net.id/jangkauan/${district.slug}`,
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={`${district.headline} | PT Lare Osing Ndo`}
+  description={district.description}
+>
+  <Fragment slot="head">
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbSchema)}
+    />
+  </Fragment>
+
+  <section class="bg-gray-50 dark:bg-neutral-900 border-b border-gray-200 dark:border-neutral-800 pt-24 pb-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+        <a href="/" class="hover:text-brand">Beranda</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <a href="/#coverage" class="hover:text-brand">Jangkauan</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <span class="text-gray-900 dark:text-white font-medium">{district.name}</span>
+      </nav>
+
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-5 text-balance">
+        {district.headline}
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mb-8">
+        {district.highlight}
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-4 mb-8">
+        <div class="bg-white dark:bg-neutral-950 border border-gray-200 dark:border-neutral-800 rounded-xl p-5">
+          <p class="text-xs font-semibold uppercase tracking-wider text-brand mb-1">
+            Estimasi Instalasi
+          </p>
+          <p class="text-xl font-bold text-gray-900 dark:text-white">
+            {district.installEstimate}
+          </p>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">
+            Gratis survei titik ODP terdekat oleh tim teknisi lokal.
+          </p>
+        </div>
+        <div class="bg-white dark:bg-neutral-950 border border-gray-200 dark:border-neutral-800 rounded-xl p-5">
+          <p class="text-xs font-semibold uppercase tracking-wider text-brand mb-2">
+            Area & Desa Terlayani di {district.name}
+          </p>
+          <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+            {district.nearbyAreas.join(" • ")}
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="#pricing"
+          class="inline-flex items-center justify-center min-h-11 px-6 py-3 rounded-lg bg-brand hover:bg-brand-hover text-brand-foreground font-semibold transition-colors"
+        >
+          Pilih Paket & Daftar di {district.name}
+        </a>
+        <a
+          href={`https://wa.me/6282141623298?text=${encodeURIComponent(
+            `Halo PT Lare Osing Ndo, saya ingin cek ketersediaan jaringan ODP di Kecamatan ${district.name}.`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center min-h-11 px-6 py-3 rounded-lg border border-gray-300 dark:border-neutral-700 text-gray-900 dark:text-white hover:border-brand font-semibold transition-colors"
+        >
+          Cek ODP via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <PricingSection client:visible defaultDistrict={district.name} />
+  <StepsSection />
+
+  <section class="bg-white dark:bg-neutral-950 py-14 border-t border-gray-200 dark:border-neutral-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+        Kecamatan Lainnya di Banyuwangi
+      </h2>
+      <div class="flex flex-wrap gap-2.5">
+        {
+          otherDistricts.map((d) => (
+            <a
+              href={`/jangkauan/${d.slug}`}
+              class="px-4 py-2 rounded-full text-sm border border-gray-200 dark:border-neutral-800 bg-gray-50 dark:bg-neutral-900 text-gray-700 dark:text-gray-300 hover:border-brand hover:text-brand transition-colors"
+            >
+              {d.name}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

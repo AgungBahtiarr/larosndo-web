@@ -96,10 +96,11 @@ interface NavItemsProps {
 const NavItems = ({ mobile = false, onNavigate }: NavItemsProps) => {
   const items = [
     { name: "Beranda", href: "/" },
-    { name: "Layanan", href: "#features" },
-    { name: "Paket", href: "#pricing" },
-    { name: "Tentang", href: "#about" },
-    { name: "Kontak", href: "#contact" },
+    { name: "Layanan", href: "/#features" },
+    { name: "Paket", href: "/#pricing" },
+    { name: "Panduan", href: "/panduan" },
+    { name: "Tentang", href: "/#about" },
+    { name: "Kontak", href: "/#contact" },
   ];
 
   return (

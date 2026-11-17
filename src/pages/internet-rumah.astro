@@ -1,0 +1,93 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PricingSection from "@/components/pricing";
+import StepsSection from "@/components/steps";
+import FAQSection from "@/components/faq";
+import { banyuwangiDistricts } from "@/data/seo-pages";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Beranda", item: "https://laros.net.id/" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Internet Rumah",
+      item: "https://laros.net.id/internet-rumah",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Pasang WiFi Rumah Unlimited Tanpa FUP Banyuwangi | PT Lare Osing Ndo"
+  description="Paket pasang WiFi rumah fiber optik di Banyuwangi mulai Rp 100.000/bulan tanpa FUP. Pilihan kecepatan 15 Mbps, 25 Mbps, dan 50 Mbps dengan pemasangan cepat 1x24 jam."
+>
+  <Fragment slot="head">
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbSchema)}
+    />
+  </Fragment>
+
+  <section class="bg-gray-50 dark:bg-neutral-900 border-b border-gray-200 dark:border-neutral-800 pt-24 pb-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+        <a href="/" class="hover:text-brand">Beranda</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <span class="text-gray-900 dark:text-white font-medium">Internet Rumah</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-5 text-balance">
+        Pasang WiFi Rumah Fiber Optik Tanpa FUP di Banyuwangi
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mb-8">
+        Nikmati internet rumah cepat dan stabil mulai Rp 100.000/bulan tanpa batasan kuota (non-FUP).
+        Cocok untuk kerja remote, belajar daring, streaming 4K, dan gaming dengan ping rendah.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="#pricing"
+          class="inline-flex items-center justify-center min-h-11 px-6 py-3 rounded-lg bg-brand hover:bg-brand-hover text-brand-foreground font-semibold transition-colors"
+        >
+          Lihat Paket Rumah
+        </a>
+        <a
+          href="/panduan/memilih-wifi-rumah-tanpa-fup-banyuwangi"
+          class="inline-flex items-center justify-center min-h-11 px-6 py-3 rounded-lg border border-gray-300 dark:border-neutral-700 text-gray-900 dark:text-white hover:border-brand font-semibold transition-colors"
+        >
+          Panduan Memilih Paket
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <PricingSection client:visible initialCategory="home" />
+  <StepsSection />
+
+  <section class="bg-white dark:bg-neutral-950 py-16 border-t border-gray-200 dark:border-neutral-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-3">
+        Jangkauan WiFi Rumah per Kecamatan di Banyuwangi
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-6">
+        Pilih kecamatan Anda untuk melihat area yang dilayani serta estimasi waktu pemasangan oleh teknisi lokal kami.
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+        {
+          banyuwangiDistricts.map((d) => (
+            <a
+              href={`/jangkauan/${d.slug}`}
+              class="rounded-xl border border-gray-200 dark:border-neutral-800 bg-gray-50 dark:bg-neutral-900 px-4 py-3 text-sm font-medium text-gray-800 dark:text-gray-200 hover:border-brand hover:text-brand transition-colors"
+            >
+              WiFi {d.name}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <FAQSection client:visible />
+</BaseLayout>

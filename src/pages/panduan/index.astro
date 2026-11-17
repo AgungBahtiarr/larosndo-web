@@ -1,0 +1,76 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { guideArticles } from "@/data/seo-pages";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Beranda", item: "https://laros.net.id/" },
+    { "@type": "ListItem", position: 2, name: "Panduan", item: "https://laros.net.id/panduan" },
+  ],
+};
+---
+
+<BaseLayout
+  title="Panduan WiFi & Internet Fiber Banyuwangi | PT Lare Osing Ndo"
+  description="Artikel panduan praktis seputar cara memilih paket WiFi rumah tanpa FUP, pengecekan titik ODP fiber optik, dan solusi internet dedicated bisnis di Banyuwangi."
+>
+  <Fragment slot="head">
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbSchema)}
+    />
+  </Fragment>
+
+  <section class="bg-gray-50 dark:bg-neutral-900 py-20 min-h-[70vh]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+      <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+        <a href="/" class="hover:text-brand">Beranda</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <span class="text-gray-900 dark:text-white font-medium">Panduan</span>
+      </nav>
+
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
+        Panduan Internet & Jaringan
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mb-12">
+        Informasi praktis untuk membantu keluarga, sekolah, dan pelaku usaha di
+        Banyuwangi memilih layanan internet fiber optik yang tepat.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {
+          guideArticles.map((article) => (
+            <article class="flex flex-col justify-between bg-white dark:bg-neutral-950 border border-gray-200 dark:border-neutral-800 rounded-2xl p-6 shadow-sm hover:border-brand/60 transition-colors">
+              <div>
+                <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-3">
+                  <span class="font-semibold text-brand">{article.category}</span>
+                  <span>{article.readTime}</span>
+                </div>
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-3 leading-snug">
+                  <a
+                    href={`/panduan/${article.slug}`}
+                    class="hover:text-brand transition-colors"
+                  >
+                    {article.title}
+                  </a>
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-5">
+                  {article.description}
+                </p>
+              </div>
+              <a
+                href={`/panduan/${article.slug}`}
+                class="inline-flex items-center text-sm font-semibold text-brand hover:underline"
+              >
+                Baca Panduan →
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

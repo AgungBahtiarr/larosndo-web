@@ -1,0 +1,68 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PricingSection from "@/components/pricing";
+import FeaturesSection from "@/components/feature";
+import FAQSection from "@/components/faq";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Beranda", item: "https://laros.net.id/" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Internet Dedicated Bisnis & Sekolah",
+      item: "https://laros.net.id/internet-dedicated-bisnis",
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Internet Dedicated Bisnis & Sekolah Banyuwangi | PT Lare Osing Ndo"
+  description="Layanan internet dedicated simetris 1:1 dengan SLA uptime 99,5%, IP Publik Statis, BGP/VLAN, IP Transit, dan Metro-E untuk kantor, sekolah, kampus, dan instansi di Banyuwangi."
+>
+  <Fragment slot="head">
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(breadcrumbSchema)}
+    />
+  </Fragment>
+
+  <section class="bg-gray-50 dark:bg-neutral-900 border-b border-gray-200 dark:border-neutral-800 pt-24 pb-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Breadcrumb" class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+        <a href="/" class="hover:text-brand">Beranda</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <span class="text-gray-900 dark:text-white font-medium">Bisnis & Sekolah</span>
+      </nav>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-5 text-balance">
+        Internet Dedicated Simetris untuk Bisnis, Sekolah & Instansi
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mb-8">
+        Koneksi 1:1 berbasis multi-link backbone dengan auto-failover, target SLA uptime 99,5%,
+        IP Publik Statis, dukungan BGP/VLAN, dan monitoring NOC 24/7 di Kabupaten Banyuwangi.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="#pricing"
+          class="inline-flex items-center justify-center min-h-11 px-6 py-3 rounded-lg bg-brand hover:bg-brand-hover text-brand-foreground font-semibold transition-colors"
+        >
+          Lihat Paket Bisnis
+        </a>
+        <a
+          href="/panduan/internet-dedicated-vs-broadband-untuk-bisnis-sekolah"
+          class="inline-flex items-center justify-center min-h-11 px-6 py-3 rounded-lg border border-gray-300 dark:border-neutral-700 text-gray-900 dark:text-white hover:border-brand font-semibold transition-colors"
+        >
+          Dedicated vs Broadband
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <PricingSection client:visible initialCategory="business" />
+  <FeaturesSection />
+  <FAQSection client:visible />
+</BaseLayout>

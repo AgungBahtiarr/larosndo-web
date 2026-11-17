@@ -83,8 +83,14 @@ function loadLeaflet(): Promise<NonNullable<Window["L"]>> {
   return leafletPromise;
 }
 
-const PricingSection = () => {
-  const [category, setCategory] = useState<CategoryKey>("home");
+const PricingSection = ({
+  initialCategory = "home",
+  defaultDistrict = districtOptions[0],
+}: {
+  initialCategory?: CategoryKey;
+  defaultDistrict?: string;
+} = {}) => {
+  const [category, setCategory] = useState<CategoryKey>(initialCategory);
   const [selectedPlan, setSelectedPlan] = useState<{
     plan: Plan;
     category: CategoryKey;
@@ -269,6 +275,7 @@ const PricingSection = () => {
         <RegistrationModal
           plan={selectedPlan.plan}
           category={selectedPlan.category}
+          defaultDistrict={defaultDistrict}
           onClose={() => setSelectedPlan(null)}
         />
       )}
@@ -353,15 +360,19 @@ const PricingCard = ({
 const RegistrationModal = ({
   plan,
   category,
+  defaultDistrict,
   onClose,
 }: {
   plan: Plan;
   category: CategoryKey;
+  defaultDistrict: string;
   onClose: () => void;
 }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [district, setDistrict] = useState(districtOptions[0]);
+  const [district, setDistrict] = useState(
+    districtOptions.includes(defaultDistrict) ? defaultDistrict : districtOptions[0]
+  );
   const [address, setAddress] = useState("");
   const [notes, setNotes] = useState("");
   const [coords, setCoords] = useState<Coords | null>(null);

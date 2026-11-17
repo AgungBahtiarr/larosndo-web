@@ -9,6 +9,13 @@
 - [Paket Rumah - Premium (50 Mbps)](https://laros.net.id/#pricing): Rp 200.000/bulan, unlimited tanpa FUP, low latency gaming & streaming 4K, gratis sewa modem & router.
 - [Bisnis & Sekolah (100 Mbps - 1 Gbps+)](https://laros.net.id/#pricing): Internet dedicated simetris, SLA uptime 99,5%, IP Publik Statis, konfigurasi BGP/VLAN, IP Transit, Metro-E, dan Managed Service.
 
+## Halaman Layanan, Jangkauan & Panduan
+
+- [Internet Rumah Tanpa FUP](https://laros.net.id/internet-rumah): Informasi lengkap paket WiFi rumah 15/25/50 Mbps tanpa FUP.
+- [Internet Dedicated Bisnis & Sekolah](https://laros.net.id/internet-dedicated-bisnis): Solusi bandwidth simetris 1:1, SLA 99,5%, IP Publik Statis, BGP/VLAN.
+- [Panduan Internet & Jaringan](https://laros.net.id/panduan): Artikel cara memilih WiFi tanpa FUP, mengenal titik ODP, dan perbedaan dedicated vs broadband.
+- [Jangkauan Kecamatan Banyuwangi](https://laros.net.id/jangkauan/rogojampi): Halaman detail jangkauan untuk Banyuwangi Kota, Rogojampi, Glagah, Giri, Kabat, Cluring, Genteng, Srono, Muncar, Singojuruh, Kalibaru, dan Songgon.
+
 ## Keunggulan Jaringan (AS149714)
 
 - [Layanan & Multi-Link Backbone](https://laros.net.id/#features): Jalur backbone ganda dengan auto-failover dan rute langsung ke 7+ IXP (IIX Jakarta, DE-CIX Jakarta, OpenIXP, ODIX, BIX Jakarta, SWIN Exchange, JKT-IX).

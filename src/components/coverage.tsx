@@ -107,15 +107,25 @@ const CoverageSection = () => {
                 secara gratis.
               </p>
             </div>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 shrink-0 min-h-11 px-5 py-2.5 rounded-lg bg-brand hover:bg-brand-hover text-brand-foreground text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
-            >
-              Cek Titik di {activeDistrict}
-              <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
-            </a>
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <a
+                href={`/jangkauan/${activeDistrict
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")}`}
+                className="inline-flex items-center justify-center min-h-11 px-4 py-2.5 rounded-lg border border-gray-300 dark:border-neutral-700 text-gray-800 dark:text-gray-200 hover:border-brand hover:text-brand text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              >
+                Info Area {activeDistrict}
+              </a>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 min-h-11 px-5 py-2.5 rounded-lg bg-brand hover:bg-brand-hover text-brand-foreground text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+              >
+                Cek Titik di {activeDistrict}
+                <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
