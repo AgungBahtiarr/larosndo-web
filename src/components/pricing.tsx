@@ -164,7 +164,6 @@ const PricingSection = () => {
           "Target SLA uptime 99,5%",
           "IP Publik Statis + monitoring proaktif",
           "Penanganan teknisi on-site cepat",
-          "Gratis perangkat router enterprise",
         ],
       },
       {
