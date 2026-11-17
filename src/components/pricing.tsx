@@ -134,7 +134,6 @@ const PricingSection = () => {
           "Proteksi keamanan jaringan lanjutan",
           "Dukungan VIP 24/7",
           "Gratis sewa modem & router",
-          "Alamat IP Statis",
         ],
       },
     ],
