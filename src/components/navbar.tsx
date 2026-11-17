@@ -99,7 +99,6 @@ const NavItems = ({ mobile = false, onNavigate }: NavItemsProps) => {
     { name: "Layanan", href: "#features" },
     { name: "Paket", href: "#pricing" },
     { name: "Tentang", href: "#about" },
-    { name: "Jaringan", href: "#credentials" },
     { name: "Kontak", href: "#contact" },
   ];
 
