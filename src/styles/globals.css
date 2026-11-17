@@ -99,11 +99,34 @@
   animation-play-state: paused;
 }
 
+@keyframes fiber-flow {
+  0% {
+    stroke-dashoffset: 32;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-fiber-flow {
+  stroke-dasharray: 6 10;
+  animation: fiber-flow 1.4s linear infinite;
+}
+
+.animate-fiber-flow-slow {
+  stroke-dasharray: 4 12;
+  animation: fiber-flow 2.2s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee {
     animation: none;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
+  }
+  .animate-fiber-flow,
+  .animate-fiber-flow-slow {
+    animation: none;
   }
 }

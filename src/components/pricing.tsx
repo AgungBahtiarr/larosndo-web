@@ -115,6 +115,7 @@ const PricingSection = () => {
         features: [
           "Kecepatan unduh hingga 25 Mbps",
           "Kuota unlimited tanpa FUP",
+          "Low latency gaming (ping rendah & stabil)",
           "Proteksi keamanan jaringan lanjutan",
           "Dukungan prioritas 24/7",
           "Gratis sewa modem",
@@ -129,6 +130,7 @@ const PricingSection = () => {
         features: [
           "Kecepatan unduh hingga 50 Mbps",
           "Kuota unlimited tanpa FUP",
+          "Low latency gaming & streaming 4K",
           "Proteksi keamanan jaringan lanjutan",
           "Dukungan VIP 24/7",
           "Gratis sewa modem & router",

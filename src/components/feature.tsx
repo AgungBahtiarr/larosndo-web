@@ -4,10 +4,23 @@ import {
   ShieldCheckIcon,
   HeadphonesIcon,
   NetworkIcon,
+  GitBranchIcon,
   CheckIcon,
 } from "lucide-react";
 
 const secondaryFeatures = [
+  {
+    icon: <GitBranchIcon className="h-5 w-5 text-brand" aria-hidden="true" />,
+    title: "Multi-Link Backbone & Jalur Backup",
+    description:
+      "Didukung banyak jalur backbone dan multi-upstream dengan failover otomatis sehingga koneksi tetap aktif tanpa putus meski salah satu jalur mengalami gangguan.",
+  },
+  {
+    icon: <NetworkIcon className="h-5 w-5 text-brand" aria-hidden="true" />,
+    title: "Low Latency Gaming & Rute IXP Langsung",
+    description:
+      "Terhubung langsung ke 7+ IXP nasional & internasional (IIX, DE-CIX, OpenIXP) untuk ping rendah, minim jitter, dan stabil saat bermain game online maupun konferensi video.",
+  },
   {
     icon: <ShieldCheckIcon className="h-5 w-5 text-brand" aria-hidden="true" />,
     title: "Keamanan Jaringan Terjaga",
@@ -19,12 +32,6 @@ const secondaryFeatures = [
     title: "Dukungan Teknis Lokal 24/7",
     description:
       "Tim teknisi berbasis di Banyuwangi yang siap membantu via WhatsApp dan turun langsung ke lapangan saat dibutuhkan.",
-  },
-  {
-    icon: <NetworkIcon className="h-5 w-5 text-brand" aria-hidden="true" />,
-    title: "Infrastruktur Siap Masa Depan",
-    description:
-      "Jaringan fiber optik dengan perangkat kelas enterprise untuk memastikan koneksi jangka panjang yang konsisten.",
   },
 ];
 
@@ -56,6 +63,118 @@ const FeaturesSection = () => {
                 kerja jarak jauh, ujian sekolah, dan operasional bisnis tanpa
                 hambatan.
               </p>
+
+              <div
+                aria-hidden="true"
+                className="mb-6 rounded-xl border border-gray-200/80 dark:border-neutral-800 bg-gray-50/80 dark:bg-neutral-950/70 p-4"
+              >
+                <div className="flex items-center justify-between text-[11px] font-medium text-gray-500 dark:text-gray-400 mb-3">
+                  <span className="inline-flex items-center gap-1.5">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    </span>
+                    Multi-Link Backbone Active
+                  </span>
+                  <span className="font-mono text-brand font-semibold">AS149714</span>
+                </div>
+
+                <svg
+                  viewBox="0 0 320 96"
+                  className="w-full h-24 overflow-visible"
+                  fill="none"
+                >
+                  <path
+                    d="M 38 48 C 95 16, 225 16, 282 48"
+                    className="stroke-gray-200 dark:stroke-neutral-800"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M 38 48 C 95 16, 225 16, 282 48"
+                    className="stroke-brand animate-fiber-flow"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                  />
+
+                  <path
+                    d="M 38 48 C 95 80, 225 80, 282 48"
+                    className="stroke-gray-200 dark:stroke-neutral-800"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M 38 48 C 95 80, 225 80, 282 48"
+                    className="stroke-emerald-500/80 animate-fiber-flow-slow"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+
+                  <rect
+                    x="114"
+                    y="10"
+                    width="92"
+                    height="18"
+                    rx="9"
+                    className="fill-white dark:fill-neutral-900 stroke-gray-200 dark:stroke-neutral-700"
+                  />
+                  <text
+                    x="160"
+                    y="22"
+                    textAnchor="middle"
+                    className="fill-gray-700 dark:fill-gray-200 text-[9px] font-semibold"
+                  >
+                    Jalur Utama · IXP
+                  </text>
+
+                  <rect
+                    x="114"
+                    y="68"
+                    width="92"
+                    height="18"
+                    rx="9"
+                    className="fill-white dark:fill-neutral-900 stroke-gray-200 dark:stroke-neutral-700"
+                  />
+                  <text
+                    x="160"
+                    y="80"
+                    textAnchor="middle"
+                    className="fill-gray-600 dark:fill-gray-300 text-[9px] font-medium"
+                  >
+                    Backup Failover
+                  </text>
+
+                  <circle
+                    cx="38"
+                    cy="48"
+                    r="16"
+                    className="fill-brand/15 stroke-brand"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="38"
+                    y="51"
+                    textAnchor="middle"
+                    className="fill-brand text-[9px] font-bold"
+                  >
+                    CORE
+                  </text>
+
+                  <circle
+                    cx="282"
+                    cy="48"
+                    r="16"
+                    className="fill-emerald-500/15 stroke-emerald-500"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="282"
+                    y="51"
+                    textAnchor="middle"
+                    className="fill-emerald-600 dark:fill-emerald-400 text-[9px] font-bold"
+                  >
+                    ANDA
+                  </text>
+                </svg>
+              </div>
             </div>
             <ul className="space-y-2.5 pt-6 border-t border-gray-100 dark:border-neutral-800 text-sm text-gray-700 dark:text-gray-300">
               <li className="flex items-center gap-2.5">
@@ -64,7 +183,11 @@ const FeaturesSection = () => {
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckIcon className="h-4 w-4 text-brand shrink-0" aria-hidden="true" />
-                <span>Latensi rendah untuk meeting &amp; gaming</span>
+                <span>Low latency gaming — ping rendah &amp; minim packet loss</span>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <CheckIcon className="h-4 w-4 text-brand shrink-0" aria-hidden="true" />
+                <span>Multi-link backbone dengan jalur backup otomatis</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckIcon className="h-4 w-4 text-brand shrink-0" aria-hidden="true" />
