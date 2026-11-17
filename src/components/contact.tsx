@@ -44,19 +44,12 @@ const ContactSection = () => {
                   className="h-5 w-5 text-brand shrink-0 mt-0.5"
                   aria-hidden="true"
                 />
-                <div className="flex flex-wrap gap-x-1.5 text-gray-700 dark:text-gray-200">
+                <div className="text-gray-700 dark:text-gray-200">
                   <a
-                    href="mailto:support@laros.ae"
+                    href="mailto:isun@laros.ae"
                     className="hover:text-brand dark:hover:text-brand transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
                   >
-                    support@laros.ae
-                  </a>
-                  <span aria-hidden="true">/</span>
-                  <a
-                    href="mailto:info@laros.ae"
-                    className="hover:text-brand dark:hover:text-brand transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
-                  >
-                    info@laros.ae
+                    isun@laros.ae
                   </a>
                 </div>
               </li>
