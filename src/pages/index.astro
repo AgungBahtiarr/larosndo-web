@@ -80,12 +80,13 @@ const partnerLogos = [
   >
     {
       partnerLogos.map((logo) => (
-        <div class="bg-white rounded-xl border border-gray-200/90 dark:border-neutral-800 px-5 py-3 h-20 w-44 flex items-center justify-center shrink-0 shadow-sm overflow-hidden">
+        <div class="bg-white dark:bg-neutral-100 rounded-xl border border-gray-200/90 dark:border-neutral-800 px-5 py-3 h-20 w-44 flex items-center justify-center shrink-0 shadow-sm overflow-hidden">
           <Image
             src={logo.logo}
             alt={`Logo ${logo.name}`}
             class="w-full h-full object-contain"
-            loading="lazy"
+            loading="eager"
+            decoding="sync"
             width={160}
             height={60}
           />

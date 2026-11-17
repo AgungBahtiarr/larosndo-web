@@ -23,6 +23,7 @@ const categories: { key: ClientCategory; label: string }[] = [
 
 const ClientGrid = ({ title, subtitle, logos }: ClientGridProps) => {
   const [active, setActive] = useState<ClientCategory>("all");
+  const [showAllMobile, setShowAllMobile] = useState(false);
 
   const filtered =
     active === "all"
@@ -73,11 +74,15 @@ const ClientGrid = ({ title, subtitle, logos }: ClientGridProps) => {
           role="tabpanel"
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
         >
-          {filtered.map((item) => (
+          {filtered.map((item, idx) => (
             <div
               key={item.name}
               title={item.name}
-              className="bg-white rounded-xl border border-gray-200/90 dark:border-neutral-800 p-3 h-24 flex items-center justify-center shadow-sm hover:border-brand/50 transition-colors duration-150 overflow-hidden"
+              className={`bg-white dark:bg-neutral-100 rounded-xl border border-gray-200/90 dark:border-neutral-800 p-3 h-24 items-center justify-center shadow-sm hover:border-brand/50 transition-colors duration-150 overflow-hidden ${
+                active === "all" && !showAllMobile && idx >= 12
+                  ? "hidden sm:flex"
+                  : "flex"
+              }`}
             >
               <img
                 src={item.logo}
@@ -88,6 +93,20 @@ const ClientGrid = ({ title, subtitle, logos }: ClientGridProps) => {
             </div>
           ))}
         </div>
+
+        {active === "all" && filtered.length > 12 && (
+          <div className="mt-6 flex justify-center sm:hidden">
+            <button
+              type="button"
+              onClick={() => setShowAllMobile((v) => !v)}
+              className="min-h-11 px-5 py-2.5 rounded-full text-sm font-medium border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-200 hover:border-brand transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+            >
+              {showAllMobile
+                ? "Tampilkan lebih sedikit"
+                : `Lihat semua (${filtered.length} mitra)`}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

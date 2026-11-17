@@ -70,9 +70,10 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div>
-            <div
-              role="tablist"
+          <div className="lg:min-h-[440px] flex flex-col justify-between">
+            <div>
+              <div
+                role="tablist"
               aria-label="Informasi tentang LarosNdo"
               className="flex flex-wrap gap-2 mb-6"
             >
@@ -119,6 +120,7 @@ const AboutSection = () => {
                 {tabContent[activeTab].content}
               </p>
             </motion.div>
+            </div>
 
             <div className="mt-8 grid grid-cols-3 gap-4">
               <FeatureItem
