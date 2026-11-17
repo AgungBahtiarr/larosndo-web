@@ -173,8 +173,9 @@ const PricingSection = () => {
         </div>
 
         <p className="mt-8 text-center text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-          *Semua paket tanpa FUP dan gratis survei lokasi. Tarif paket bisnis
-          bersifat estimasi awal dan menyesuaikan kebutuhan lokasi.
+          *Semua paket tanpa FUP dan gratis survei lokasi. Tersedia juga layanan
+          Internet Dedicated, IP Transit BGP, Metro-E, dan Managed Service untuk
+          bisnis maupun instansi di Banyuwangi.
         </p>
       </div>
     </section>
