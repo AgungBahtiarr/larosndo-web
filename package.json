@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sync-reviews": "node scripts/sync-reviews.mjs"
   },
   "dependencies": {
     "@astrojs/check": "0.9.12",
@@ -36,5 +37,8 @@
     "tailwindcss": "^3.4.19",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.1"
   }
 }

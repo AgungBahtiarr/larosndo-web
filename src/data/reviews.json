@@ -1,0 +1,49 @@
+{
+  "placeName": "Lare Osing Ndo",
+  "placeUrl": "https://maps.app.goo.gl/ukvqhq9zA2VT2M48A",
+  "rating": 5,
+  "totalReviews": 27,
+  "updatedAt": "2026-11-17T05:08:41.176Z",
+  "reviews": [
+    {
+      "name": "Andhay Cell",
+      "rating": 5,
+      "date": "sebulan lalu",
+      "content": "TOP....gak sia-sia....pindah layanan ke sini....mulai pemasangan sampe nyala....gak ada kendala....ditangani profesional....",
+      "initials": "AC",
+      "avatar": "/reviews/reviewer-1.jpg"
+    },
+    {
+      "name": "prima wahyudi",
+      "rating": 5,
+      "date": "4 bulan lalu",
+      "content": "internet nya juoss no ngadat\npelayanan oke banget dan gercep dong\nsistem pembayaran mudah, simple, n cashless",
+      "initials": "PW",
+      "avatar": "/reviews/reviewer-2.jpg"
+    },
+    {
+      "name": "Niko Aleksander Simarmata",
+      "rating": 5,
+      "date": "3 bulan lalu",
+      "content": "Penyedia layanan internet ter JoSS LAREEEEEE",
+      "initials": "NS",
+      "avatar": "/reviews/reviewer-3.jpg"
+    },
+    {
+      "name": "blink network",
+      "rating": 5,
+      "date": "setahun lalu",
+      "content": "Ini ISP asli Banyuwangi dengan kualitas jaringan JUOSS. Owner nya suhu, jaringan nya full peer kemana2. penanganan gangguan cepat. wes pokoe muantap",
+      "initials": "BN",
+      "avatar": "/reviews/reviewer-4.jpg"
+    },
+    {
+      "name": "Arif Zaenal Abidin",
+      "rating": 5,
+      "date": "9 bulan lalu",
+      "content": "Jos Gandosss, Bangsonx pokoke pelayanan Bintang 5 Full Service njobo njeroo...",
+      "initials": "AA",
+      "avatar": "/reviews/reviewer-5.jpg"
+    }
+  ]
+}

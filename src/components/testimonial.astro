@@ -1,88 +1,174 @@
 ---
-import { StarIcon } from "lucide-react";
+import { StarIcon, ExternalLinkIcon } from "lucide-react";
+import reviewsData from "@/data/reviews.json";
 
-const reviews = [
-  {
-    name: "Rifqi Simanjuntak",
-    role: "CEO, TechCorp",
-    content:
-      "Larosndo has transformed our business connectivity. Their high-speed internet and reliable service have been crucial to our success.",
-    rating: 5,
-  },
-  {
-    name: "Ihwan Persneleng",
-    role: "Homeowner",
-    content:
-      "I've never experienced such fast and stable internet at home. Larosndo's customer service is top-notch too!",
-    rating: 5,
-  },
-  {
-    name: "Ilham Soundsystem",
-    role: "Small Business Owner",
-    content:
-      "Switching to Larosndo was the best decision for my business. Their internet speed and uptime are unmatched.",
-    rating: 4,
-  },
-  {
-    name: "Agung Windows",
-    role: "Remote Worker",
-    content:
-      "As someone who works from home, having reliable internet is crucial. Larosndo delivers consistently excellent service.",
-    rating: 5,
-  },
-];
+const reviews = reviewsData.reviews;
+const ratingText = Number(reviewsData.rating || 5).toFixed(1);
+const totalReviews = reviewsData.totalReviews || reviews.length;
+const placeUrl =
+  reviewsData.placeUrl || "https://maps.app.goo.gl/ukvqhq9zA2VT2M48A";
 ---
 
 <section
-  class="py-5 sm:py-20 bg-gray-50 dark:bg-gray-800 dark:bg-dot-white/[0.2] bg-dot-black/[0.2]"
+  id="testimonials"
+  class="py-16 sm:py-20 bg-gray-50 dark:bg-neutral-900/60 border-y border-gray-200/70 dark:border-neutral-800"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2
-      class="hidden md:block text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">
-      Apa yang dikatakan mitra kami
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {
-        reviews.map((review, index) => (
-          // <TestimonialCard key={index} review={review} />
-          <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
-            <div class="flex items-center mb-4 ">
-              <div class="mr-4">
-                <img
-                  src={`https://i.pravatar.cc/60?img=${Math.floor(
-                    Math.random() * 70,
-                  )}`}
-                  alt={review.name}
-                  class="w-12 h-12 rounded-full"
-                />
-              </div>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
+          Apa Kata Pelanggan Kami
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300 text-sm sm:text-base max-w-2xl">
+          Ulasan asli dari pelanggan dan mitra Laros Net di Google Maps.
+        </p>
+      </div>
+
+      <div class="inline-flex flex-wrap items-center gap-3 self-start md:self-auto bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-xl px-4 py-2.5 shadow-sm">
+        <div
+          class="flex items-center gap-0.5"
+          aria-label={`Rating ${ratingText} dari 5 bintang`}
+        >
+          {[...Array(5)].map(() => (
+            <StarIcon className="w-4 h-4 fill-brand text-brand" aria-hidden="true" />
+          ))}
+        </div>
+        <span class="text-sm font-bold text-gray-900 dark:text-white tabular-nums">
+          {ratingText} / 5.0
+        </span>
+        <span class="text-xs text-gray-500 dark:text-gray-400 tabular-nums">
+          ({totalReviews} ulasan)
+        </span>
+        <a
+          href={placeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 text-xs font-medium text-brand hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-sm"
+        >
+          Google Maps
+          <ExternalLinkIcon className="w-3 h-3" aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative overflow-hidden">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 sm:w-20 bg-gradient-to-r from-gray-50 dark:from-neutral-950 to-transparent"
+    />
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 sm:w-20 bg-gradient-to-l from-gray-50 dark:from-neutral-950 to-transparent"
+    />
+
+    <div class="flex w-max animate-marquee hover:[animation-play-state:paused] motion-reduce:animate-none">
+      <div class="flex gap-6 px-3">
+        {
+          reviews.map((review) => (
+            <article class="w-[310px] sm:w-[360px] shrink-0 flex flex-col justify-between bg-white dark:bg-neutral-900 border border-gray-200/90 dark:border-neutral-800 rounded-xl p-6 shadow-sm hover:border-brand/50 transition-colors duration-200">
               <div>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  {review.name}
-                </h3>
-                <p class="text-sm text-gray-600 dark:text-gray-300">
-                  {review.role}
+                <div
+                  class="flex items-center gap-0.5 mb-4"
+                  aria-label={`Rating ${review.rating} dari 5`}
+                >
+                  {[...Array(5)].map((_, i) => (
+                    <StarIcon
+                      className={`w-4 h-4 ${
+                        i < review.rating
+                          ? "fill-brand text-brand"
+                          : "text-gray-300 dark:text-neutral-700"
+                      }`}
+                      aria-hidden="true"
+                    />
+                  ))}
+                </div>
+                <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-6 whitespace-pre-line">
+                  "{review.content}"
                 </p>
               </div>
-            </div>
-            <p class="text-gray-700 dark:text-gray-300 mb-4">
-              {review.content}
-            </p>
-            <div class="flex items-center">
-              {[...Array(5)].map((_, i) => (
-                <StarIcon
-                  key={i}
-                  className={`w-5 h-5 ${
-                    i < review.rating
-                      ? "text-[#fb923c]"
-                      : "text-gray-300 dark:text-gray-600"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        ))
-      }
+
+              <div class="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-neutral-800">
+                {review.avatar ? (
+                  <img
+                    src={review.avatar}
+                    alt={`Foto profil ${review.name}`}
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                    class="w-10 h-10 rounded-full object-cover border border-gray-200 dark:border-neutral-700 shrink-0"
+                  />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    class="w-10 h-10 rounded-full bg-brand/10 text-brand font-bold text-sm flex items-center justify-center shrink-0"
+                  >
+                    {review.initials}
+                  </div>
+                )}
+                <div class="min-w-0">
+                  <h3 class="text-sm font-semibold text-gray-900 dark:text-white truncate">
+                    {review.name}
+                  </h3>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 truncate">
+                    {review.date} · Google Review
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="flex gap-6 px-3" aria-hidden="true">
+        {
+          reviews.map((review) => (
+            <article class="w-[310px] sm:w-[360px] shrink-0 flex flex-col justify-between bg-white dark:bg-neutral-900 border border-gray-200/90 dark:border-neutral-800 rounded-xl p-6 shadow-sm hover:border-brand/50 transition-colors duration-200">
+              <div>
+                <div class="flex items-center gap-0.5 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <StarIcon
+                      className={`w-4 h-4 ${
+                        i < review.rating
+                          ? "fill-brand text-brand"
+                          : "text-gray-300 dark:text-neutral-700"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-6 whitespace-pre-line">
+                  "{review.content}"
+                </p>
+              </div>
+
+              <div class="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-neutral-800">
+                {review.avatar ? (
+                  <img
+                    src={review.avatar}
+                    alt=""
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                    class="w-10 h-10 rounded-full object-cover border border-gray-200 dark:border-neutral-700 shrink-0"
+                  />
+                ) : (
+                  <div class="w-10 h-10 rounded-full bg-brand/10 text-brand font-bold text-sm flex items-center justify-center shrink-0">
+                    {review.initials}
+                  </div>
+                )}
+                <div class="min-w-0">
+                  <div class="text-sm font-semibold text-gray-900 dark:text-white truncate">
+                    {review.name}
+                  </div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 truncate">
+                    {review.date} · Google Review
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HeroSection from "@/components/hero";
+import TestimonialSection from "@/components/testimonial.astro";
 import ClientGrid, { type ClientLogo } from "@/components/client-grid";
 import ClientShowcase from "@/components/client-showcase";
 import FeaturesSection from "@/components/feature";
@@ -60,15 +61,7 @@ const partnerLogos = [
   <HeroSection>
     <Image src={"/laros.png"} alt="Laros Net" width={140} height={140} loading="eager" />
   </HeroSection>
-  <div>
-    <script is:inline src="https://static.elfsight.com/platform/platform.js" async
-    ></script>
-    <div
-      class="elfsight-app-193b3701-5f67-4485-bb25-0a8c09b0269a"
-      data-elfsight-app-lazy
-    >
-    </div>
-  </div>
+  <TestimonialSection />
   <ClientGrid
     title="Pilihan Utama Lembaga dan Bisnis"
     subtitle="Dipercaya oleh instansi pemerintah, kampus, sekolah, dan pelaku usaha di Banyuwangi."
