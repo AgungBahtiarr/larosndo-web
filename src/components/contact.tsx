@@ -2,7 +2,7 @@ import { PhoneIcon, MapPinIcon, MailIcon } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="relative py-20 bg-white dark:bg-gray-900">
+    <section id="contact" className="relative py-20 bg-white dark:bg-neutral-950">
       <div className="absolute inset-0 z-0">
         <iframe
           title="Peta lokasi PT Lare Osing Ndo di Banyuwangi"
@@ -16,7 +16,7 @@ const ContactSection = () => {
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-8 sm:py-16 sm:px-6 lg:px-8 pointer-events-none">
         <div className="flex md:justify-end">
-          <div className="w-full md:w-1/2 lg:w-2/5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl p-8 md:p-10 pointer-events-auto">
+          <div className="w-full md:w-1/2 lg:w-2/5 bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-xl shadow-xl p-8 md:p-10 pointer-events-auto">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
               Hubungi Kami
             </h2>

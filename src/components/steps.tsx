@@ -21,7 +21,7 @@ const StepsSection = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+    <section className="py-16 sm:py-20 bg-white dark:bg-neutral-950 border-t border-gray-100 dark:border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 text-balance">
@@ -35,7 +35,7 @@ const StepsSection = () => {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="p-6 rounded-xl bg-gray-50 dark:bg-gray-800/70 border border-gray-200/80 dark:border-gray-700/70"
+              className="p-6 rounded-xl bg-gray-50 dark:bg-neutral-900/70 border border-gray-200/80 dark:border-neutral-800"
             >
               <span className="inline-block text-sm font-bold tabular-nums text-brand mb-3">
                 Langkah {step.number}

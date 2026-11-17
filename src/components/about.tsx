@@ -42,7 +42,7 @@ const AboutSection = () => {
   const tabKeys = Object.keys(tabContent) as TabKey[];
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900 overflow-x-clip">
+    <section id="about" className="py-20 bg-white dark:bg-neutral-950 overflow-x-clip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 text-balance">
@@ -58,9 +58,9 @@ const AboutSection = () => {
             <div
               role="img"
               aria-label="Infrastruktur server jaringan PT Lare Osing Ndo"
-              className="rounded-xl py-20 px-8 bg-[url('/server.jpeg')] h-[360px] sm:h-[440px] bg-cover bg-bottom border border-gray-200 dark:border-gray-800"
+              className="rounded-xl py-20 px-8 bg-[url('/server.jpeg')] h-[360px] sm:h-[440px] bg-cover bg-bottom border border-gray-200 dark:border-neutral-800"
             />
-            <div className="absolute bottom-4 right-4 md:-bottom-5 md:-right-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-5 py-3.5 rounded-xl shadow-lg">
+            <div className="absolute bottom-4 right-4 md:-bottom-5 md:-right-5 bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 px-5 py-3.5 rounded-xl shadow-lg">
               <p className="text-2xl font-bold tabular-nums text-brand">
                 Sejak 2020
               </p>
@@ -90,7 +90,7 @@ const AboutSection = () => {
                     className={`min-h-10 px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
                       isSelected
                         ? "bg-brand text-brand-foreground"
-                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-neutral-900 dark:text-gray-300 dark:hover:bg-neutral-800"
                     }`}
                   >
                     {tabContent[tab].title}
@@ -107,7 +107,7 @@ const AboutSection = () => {
               initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: prefersReducedMotion ? 0 : 0.2, ease: "easeOut" }}
-              className="bg-gray-50 dark:bg-gray-800 border border-gray-200/80 dark:border-gray-700/70 p-6 rounded-xl"
+              className="bg-gray-50 dark:bg-neutral-900 border border-gray-200/80 dark:border-neutral-800 p-6 rounded-xl"
             >
               <div className="flex items-center gap-3 mb-3">
                 {tabContent[activeTab].icon}

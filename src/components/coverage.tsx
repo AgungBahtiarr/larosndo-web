@@ -30,7 +30,7 @@ const CoverageSection = () => {
   )}`;
 
   return (
-    <section id="coverage" className="py-20 bg-gray-50 dark:bg-gray-800/60">
+    <section id="coverage" className="py-20 bg-gray-50 dark:bg-neutral-900/60">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 text-balance">
@@ -42,7 +42,7 @@ const CoverageSection = () => {
           </p>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 sm:p-8 shadow-sm">
+        <div className="bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 rounded-xl p-6 sm:p-8 shadow-sm">
           <div className="mb-6">
             <label htmlFor="district-search" className="sr-only">
               Cari kecamatan di Banyuwangi
@@ -58,7 +58,7 @@ const CoverageSection = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Cari kecamatan (misal: Rogojampi, Genteng, Glagah)..."
-                className="w-full min-h-11 pl-11 pr-4 py-2.5 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-400 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                className="w-full min-h-11 pl-11 pr-4 py-2.5 rounded-md border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-950 text-gray-900 dark:text-white placeholder:text-gray-400 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               />
             </div>
           </div>
@@ -80,7 +80,7 @@ const CoverageSection = () => {
                     className={`inline-flex items-center gap-1.5 min-h-10 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                       isSelected
                         ? "bg-brand text-brand-foreground"
-                        : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600"
+                        : "bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-neutral-700"
                     }`}
                   >
                     <MapPinIcon className="h-3.5 w-3.5" aria-hidden="true" />
@@ -97,7 +97,7 @@ const CoverageSection = () => {
             </p>
           )}
 
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-gray-200 dark:border-neutral-800">
             <div>
               <p className="text-sm font-semibold text-gray-900 dark:text-white">
                 Wilayah dipilih: {activeDistrict}

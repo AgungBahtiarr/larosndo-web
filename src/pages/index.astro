@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import HeroSection from "@/components/hero";
+import ClientGrid, { type ClientLogo } from "@/components/client-grid";
 import ClientShowcase from "@/components/client-showcase";
 import FeaturesSection from "@/components/feature";
 import PricingSection from "@/components/pricing";
@@ -11,33 +12,31 @@ import FAQSection from "@/components/faq";
 import ContactSection from "@/components/contact";
 import { Image } from "astro:assets";
 
-const logos = [
-  { name: "cli", logo: "/client/logocli.png" },
-  { name: "swin", logo: "/client/logo_swin.png" },
-  { name: "sewiwi", logo: "/client/sewiwi.png" },
-  { name: "SMKN 1 Glagah", logo: "/client/glagah.png" },
-  { name: "ISOAE", logo: "/client/isoae.png" },
-  { name: "SMKN Ihya", logo: "/client/imud.png" },
-  { name: "Politeknik Negeri Banyuwangi", logo: "/client/poliwangi.png" },
-  { name: "PolintNet", logo: "/client/polint.png" },
-  { name: "Starmedia Technology", logo: "/client/starmedia.png" },
-  { name: "O-Net", logo: "/client/onet.png" },
-  { name: "SMKN 1 BWI", logo: "/client/smkn1bwi.jpg" },
-  { name: "Satelit", logo: "/client/logo-satelit.png" },
-  { name: "SMK 17 Cluring", logo: "/client/smk17cluring.png" },
-  { name: "Stikes", logo: "/client/stikesbwi.png" },
-  { name: "MAN 1 BWI", logo: "/client/man1bwi.jpeg" },
-  { name: "STFI", logo: "/client/stfi.png" },
-  { name: "MTS 10 BWI", logo: "/client/mts10bwi.png" },
-  { name: "MTS 8 BWI", logo: "/client/mts8bwi.png" },
-  { name: "AYO", logo: "/client/ayo.webp" },
-  { name: "Riyad", logo: "/client/riyad.png" },
-  { name: "cebersoft", logo: "/client/cebersoft.png" },
-  { name: "Pandawa", logo: "/client/pandawa.jpeg" },
-  {
-    name: "BPS Banyuwangi",
-    logo: "/client/bpsbwi.svg",
-  },
+const logos: ClientLogo[] = [
+  { name: "BPS Banyuwangi", logo: "/client/bpsbwi.svg", category: "instansi" },
+  { name: "Politeknik Negeri Banyuwangi", logo: "/client/poliwangi.png", category: "instansi" },
+  { name: "Stikes Banyuwangi", logo: "/client/stikesbwi.png", category: "instansi" },
+  { name: "STFI", logo: "/client/stfi.png", category: "instansi" },
+  { name: "PolintNet", logo: "/client/polint.png", category: "instansi" },
+  { name: "SMKN 1 Glagah", logo: "/client/glagah.png", category: "sekolah" },
+  { name: "SMKN 1 BWI", logo: "/client/smkn1bwi.jpg", category: "sekolah" },
+  { name: "MAN 1 BWI", logo: "/client/man1bwi.jpeg", category: "sekolah" },
+  { name: "SMK 17 Cluring", logo: "/client/smk17cluring.png", category: "sekolah" },
+  { name: "SMKN Ihya", logo: "/client/imud.png", category: "sekolah" },
+  { name: "MTS 10 BWI", logo: "/client/mts10bwi.png", category: "sekolah" },
+  { name: "MTS 8 BWI", logo: "/client/mts8bwi.png", category: "sekolah" },
+  { name: "CLI", logo: "/client/logocli.png", category: "bisnis" },
+  { name: "Swin", logo: "/client/logo_swin.png", category: "bisnis" },
+  { name: "Sewiwi", logo: "/client/sewiwi.png", category: "bisnis" },
+  { name: "ISOAE", logo: "/client/isoae.png", category: "bisnis" },
+  { name: "Starmedia Technology", logo: "/client/starmedia.png", category: "bisnis" },
+  { name: "O-Net", logo: "/client/onet.png", category: "bisnis" },
+  { name: "Satelit", logo: "/client/logo-satelit.png", category: "bisnis" },
+  { name: "AYO", logo: "/client/ayo.webp", category: "bisnis" },
+  { name: "Riyad", logo: "/client/riyad.png", category: "bisnis" },
+  { name: "Cebersoft", logo: "/client/cebersoft.png", category: "bisnis" },
+  { name: "Pandawa", logo: "/client/pandawa.jpeg", category: "bisnis" },
+  { name: "BSI Banyuwangi", logo: "/client/bsibwi.webp", category: "bisnis" },
 ];
 
 const partnerLogos = [
@@ -70,37 +69,34 @@ const partnerLogos = [
     >
     </div>
   </div>
-  <ClientShowcase title="Pilihan Utama Lembaga dan Bisnis">
-    {
-      logos.map((logo) => (
-        <Image
-          src={logo.logo}
-          alt={`Logo ${logo.name}`}
-          class="max-w-[200px] max-h-[80px] w-auto h-auto object-contain"
-          loading="lazy"
-          width={200}
-          height={100}
-        />
-      ))
-    }
-  </ClientShowcase>
+  <ClientGrid
+    title="Pilihan Utama Lembaga dan Bisnis"
+    subtitle="Dipercaya oleh instansi pemerintah, kampus, sekolah, dan pelaku usaha di Banyuwangi."
+    logos={logos}
+    client:visible
+  />
   <FeaturesSection />
   <PricingSection client:visible />
   <StepsSection />
   <CoverageSection client:visible />
   <AboutSection client:visible />
   <FAQSection client:visible />
-  <ClientShowcase title="Partner Kami">
+  <ClientShowcase
+    title="Didukung Infrastruktur & Mitra Teknologi"
+    subtitle="Terhubung dengan jaringan backbone dan vendor perangkat kelas enterprise."
+  >
     {
       partnerLogos.map((logo) => (
-        <Image
-          src={logo.logo}
-          alt={`Logo ${logo.name}`}
-          class="max-w-[200px] max-h-[80px] w-auto h-auto object-contain"
-          loading="lazy"
-          width={200}
-          height={100}
-        />
+        <div class="bg-white rounded-xl border border-gray-200/90 dark:border-neutral-800 px-5 py-3 h-20 w-44 flex items-center justify-center shrink-0 shadow-sm overflow-hidden">
+          <Image
+            src={logo.logo}
+            alt={`Logo ${logo.name}`}
+            class="w-full h-full object-contain"
+            loading="lazy"
+            width={160}
+            height={60}
+          />
+        </div>
       ))
     }
   </ClientShowcase>

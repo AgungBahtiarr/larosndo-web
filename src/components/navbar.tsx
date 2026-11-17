@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <nav
       aria-label="Navigasi utama"
-      className="sticky top-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-gray-200/80 dark:border-gray-800"
+      className="sticky top-0 z-40 bg-white/95 dark:bg-neutral-950/95 backdrop-blur-sm border-b border-gray-200/80 dark:border-neutral-800"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -77,7 +77,7 @@ const Navbar = () => {
       {isMenuOpen && (
         <div
           id="mobile-nav-menu"
-          className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900"
+          className="md:hidden border-t border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-950"
         >
           <div className="px-3 pt-2 pb-4 space-y-1">
             <NavItems mobile onNavigate={() => setIsMenuOpen(false)} />
@@ -111,7 +111,7 @@ const NavItems = ({ mobile = false, onNavigate }: NavItemsProps) => {
           onClick={onNavigate}
           className={
             mobile
-              ? "flex items-center min-h-11 px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand dark:hover:text-brand hover:bg-gray-50 dark:hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              ? "flex items-center min-h-11 px-3 py-2 rounded-md text-base font-semibold text-gray-700 dark:text-gray-200 hover:text-brand dark:hover:text-brand hover:bg-gray-50 dark:hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               : "text-gray-700 dark:text-gray-200 hover:text-brand dark:hover:text-brand px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
           }
         >

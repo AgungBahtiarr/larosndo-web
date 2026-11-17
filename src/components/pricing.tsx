@@ -110,7 +110,7 @@ const PricingSection = () => {
   const activePlans = plansByCategory[category];
 
   return (
-    <section id="pricing" className="bg-white dark:bg-gray-900 py-20">
+    <section id="pricing" className="bg-white dark:bg-neutral-950 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 text-balance">
@@ -126,7 +126,7 @@ const PricingSection = () => {
           <div
             role="tablist"
             aria-label="Kategori paket internet"
-            className="inline-flex p-1 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+            className="inline-flex p-1 rounded-full bg-gray-100 dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800"
           >
             <button
               type="button"
@@ -197,8 +197,8 @@ const PricingCard = ({
     <div
       className={`rounded-xl overflow-hidden flex flex-col h-full transition-[border-color,box-shadow] duration-200 ${
         plan.recommended
-          ? "bg-white dark:bg-gray-800 border-2 border-brand shadow-lg"
-          : "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md"
+          ? "bg-white dark:bg-neutral-900 border-2 border-brand shadow-lg"
+          : "bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 shadow-sm hover:shadow-md"
       }`}
     >
       <div className="p-6 sm:p-7 flex-grow">
@@ -243,7 +243,7 @@ const PricingCard = ({
           ))}
         </ul>
       </div>
-      <div className="p-6 bg-gray-50 dark:bg-gray-800/80 border-t border-gray-100 dark:border-gray-700/70 mt-auto">
+      <div className="p-6 bg-gray-50 dark:bg-neutral-900/80 border-t border-gray-100 dark:border-neutral-800 mt-auto">
         <a
           href={`https://wa.me/6282141623298?text=${whatsappText}`}
           target="_blank"
@@ -251,7 +251,7 @@ const PricingCard = ({
           className={`inline-flex items-center justify-center w-full min-h-11 font-semibold py-2.5 px-4 rounded-lg text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
             plan.recommended
               ? "bg-brand hover:bg-brand-hover text-brand-foreground"
-              : "bg-gray-900 hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 text-white"
+              : "bg-gray-900 hover:bg-gray-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-white"
           }`}
         >
           Pilih Paket {plan.name}

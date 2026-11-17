@@ -35,7 +35,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="features" className="bg-gray-50 dark:bg-gray-800/60 py-20">
+    <section id="features" className="bg-gray-50 dark:bg-neutral-900/60 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 text-balance">
@@ -69,7 +69,7 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
   return (
-    <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200/80 dark:border-gray-700/70 shadow-sm hover:shadow-md transition-shadow duration-200">
+    <div className="bg-white dark:bg-neutral-900 p-6 rounded-xl border border-gray-200/80 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow duration-200">
       <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-orange-50 dark:bg-orange-950/50 text-brand mb-4">
         {icon}
       </div>
