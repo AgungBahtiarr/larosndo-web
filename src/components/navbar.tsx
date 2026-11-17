@@ -45,7 +45,7 @@ const Navbar = () => {
               <img
                 className="h-11 w-auto"
                 src="/laroslogo.png"
-                alt="Laros Net"
+                alt="PT Lare Osing Ndo"
                 width={132}
                 height={44}
               />

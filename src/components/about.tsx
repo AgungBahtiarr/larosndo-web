@@ -22,13 +22,13 @@ const AboutSection = () => {
     mission: {
       title: "Misi Kami",
       content:
-        "Di Laros Net, kami berkomitmen menjembatani kesenjangan digital dengan menghadirkan akses internet fiber optik yang cepat dan stabil hingga ke area perkotaan maupun pedesaan Banyuwangi.",
+        "Di PT Lare Osing Ndo, kami berkomitmen menjembatani kesenjangan digital dengan menghadirkan akses internet fiber optik yang cepat dan stabil hingga ke area perkotaan maupun pedesaan Banyuwangi.",
       icon: <LightbulbIcon className="h-8 w-8 text-brand shrink-0" aria-hidden="true" />,
     },
     team: {
       title: "Tim Kami",
       content:
-        "Di balik layanan Laros Net terdapat tim network engineer, teknisi lapangan lokal, dan layanan pelanggan yang sigap menjaga koneksi Anda tetap stabil setiap hari.",
+        "Di balik layanan PT Lare Osing Ndo terdapat tim network engineer, teknisi lapangan lokal, dan layanan pelanggan yang sigap menjaga koneksi Anda tetap stabil setiap hari.",
       icon: <UsersIcon className="h-8 w-8 text-brand shrink-0" aria-hidden="true" />,
     },
     future: {

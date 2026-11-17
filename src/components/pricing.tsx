@@ -529,7 +529,7 @@ const RegistrationModal = ({
     setError("");
 
     const lines = [
-      "Halo Laros Net, saya ingin mendaftar pasang WiFi baru:",
+      "Halo PT Lare Osing Ndo, saya ingin mendaftar pasang WiFi baru:",
       "",
       `• Paket Dipilih: ${planSummary}`,
       `• Nama: ${cleanName}`,

@@ -26,7 +26,7 @@ const CoverageSection = () => {
 
   const activeDistrict = selected || query.trim() || "Banyuwangi";
   const whatsappUrl = `https://wa.me/6282141623298?text=${encodeURIComponent(
-    `Halo Laros Net, saya mau cek ketersediaan jaringan fiber optik di wilayah ${activeDistrict}.`,
+    `Halo PT Lare Osing Ndo, saya mau cek ketersediaan jaringan fiber optik di wilayah ${activeDistrict}.`,
   )}`;
 
   return (

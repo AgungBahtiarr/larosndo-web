@@ -23,7 +23,7 @@ const FAQSection = () => {
         "Ya, kami menyediakan layanan dedicated maupun broadband bisnis dengan dukungan SLA, IP Statis, dan penanganan teknis prioritas untuk sekolah, kampus, kantor, maupun instansi.",
     },
     {
-      question: "Wilayah mana saja yang sudah terjangkau jaringan Laros Net?",
+      question: "Wilayah mana saja yang sudah terjangkau jaringan PT Lare Osing Ndo?",
       answer:
         "Saat ini jaringan kami menjangkau berbagai kecamatan di Kabupaten Banyuwangi dan terus diperluas. Anda dapat mengecek ketersediaan tiang/ODP di alamat Anda langsung melalui WhatsApp tim kami.",
     },
