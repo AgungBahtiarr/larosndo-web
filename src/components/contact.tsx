@@ -47,7 +47,7 @@ const ContactSection = () => {
                   aria-hidden="true"
                 />
                 <span className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Jl. Perumahan Griya Gurit Permai Blok ii No.16, Guri,
+                  Jl. Perumahan Griya Gurit Permai Blok ii No.16, Gurit,
                   Pengatigan, Kec. Rogojampi, Kabupaten Banyuwangi, Jawa Timur
                   68462
                 </span>
