@@ -58,7 +58,7 @@ const ClientGrid = ({ title, subtitle, logos }: ClientGridProps) => {
                 role="tab"
                 aria-selected={isSelected}
                 onClick={() => setActive(cat.key)}
-                className={`min-h-10 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+                className={`min-h-[44px] px-4 py-2 rounded-full text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                   isSelected
                     ? "bg-brand text-brand-foreground shadow-sm"
                     : "bg-gray-100 dark:bg-neutral-900 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-neutral-800"

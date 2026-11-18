@@ -1,4 +1,5 @@
 ---
+import "@fontsource-variable/plus-jakarta-sans";
 import "@/styles/globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/Footer.astro";
@@ -343,8 +344,14 @@ const faqSchema = {
   </head>
 
   <body class="bg-white dark:bg-neutral-950 transition-colors duration-300">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2.5 focus:rounded-lg focus:bg-brand focus:text-brand-foreground focus:font-semibold focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
+    >
+      Langsung ke konten utama
+    </a>
     <Navbar client:load />
-    <main>
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
     <Footer />

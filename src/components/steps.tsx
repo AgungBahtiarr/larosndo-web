@@ -21,7 +21,7 @@ const steps = [
 
 const StepsSection = () => {
   return (
-    <section className="py-16 sm:py-20 bg-white dark:bg-neutral-950 border-t border-gray-100 dark:border-neutral-800">
+    <section className="py-16 sm:py-20 bg-gray-50 dark:bg-neutral-900/60 border-y border-gray-200/70 dark:border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-2.5 text-balance">

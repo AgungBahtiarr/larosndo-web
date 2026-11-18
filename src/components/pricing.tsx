@@ -215,7 +215,7 @@ const PricingSection = ({
               aria-selected={category === "home"}
               aria-controls="panel-pricing"
               onClick={() => setCategory("home")}
-              className={`min-h-10 px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+              className={`min-h-[44px] px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                 category === "home"
                   ? "bg-brand text-brand-foreground shadow-sm"
                   : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
@@ -230,7 +230,7 @@ const PricingSection = ({
               aria-selected={category === "business"}
               aria-controls="panel-pricing"
               onClick={() => setCategory("business")}
-              className={`min-h-10 px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+              className={`min-h-[44px] px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                 category === "business"
                   ? "bg-brand text-brand-foreground shadow-sm"
                   : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"

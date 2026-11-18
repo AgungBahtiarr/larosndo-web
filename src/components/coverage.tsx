@@ -30,7 +30,7 @@ const CoverageSection = () => {
   )}`;
 
   return (
-    <section id="coverage" className="py-20 bg-gray-50 dark:bg-neutral-900/60">
+    <section id="coverage" className="py-20 bg-white dark:bg-neutral-950 border-t border-gray-100 dark:border-neutral-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 text-balance">
@@ -77,7 +77,7 @@ const CoverageSection = () => {
                     type="button"
                     aria-pressed={isSelected}
                     onClick={() => setSelected(district)}
-                    className={`inline-flex items-center gap-1.5 min-h-10 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
+                    className={`inline-flex items-center gap-1.5 min-h-[44px] px-3.5 py-2 rounded-lg text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
                       isSelected
                         ? "bg-brand text-brand-foreground"
                         : "bg-gray-100 dark:bg-neutral-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-neutral-700"

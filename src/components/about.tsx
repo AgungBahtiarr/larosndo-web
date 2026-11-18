@@ -42,7 +42,7 @@ const AboutSection = () => {
   const tabKeys = Object.keys(tabContent) as TabKey[];
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-neutral-950 overflow-x-clip">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-neutral-900/60 border-y border-gray-200/70 dark:border-neutral-800 overflow-x-clip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 text-balance">
@@ -88,7 +88,7 @@ const AboutSection = () => {
                     aria-selected={isSelected}
                     aria-controls={`panel-${tab}`}
                     onClick={() => setActiveTab(tab)}
-                    className={`min-h-10 px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
+                    className={`min-h-[44px] px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 ${
                       isSelected
                         ? "bg-brand text-brand-foreground"
                         : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-neutral-900 dark:text-gray-300 dark:hover:bg-neutral-800"

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
+const defaultTheme = require("tailwindcss/defaultTheme");
 const svgToDataUri = require("mini-svg-data-uri");
 
 const {
@@ -11,6 +12,9 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans Variable"', ...defaultTheme.fontFamily.sans],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

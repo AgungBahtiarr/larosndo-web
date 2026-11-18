@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({ children }: HeroSectionProps) => {
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-neutral-950 py-16 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-white dark:bg-neutral-950 min-h-[calc(100svh-4rem)] flex items-center py-12 sm:py-16">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-grid-slate-200/70 dark:bg-grid-neutral-800/50 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
