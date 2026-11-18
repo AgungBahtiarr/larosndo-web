@@ -211,9 +211,11 @@ export const banyuwangiDistricts: DistrictPage[] = [
       "Gambor",
       "Gumirih",
       "Kemiri",
-      "Lemahbang Kulon",
+      "Lemahbangkulon",
       "Padang",
       "Singojuruh",
+      "Singolatren",
+      "Sumberbaru",
     ],
     installEstimate: "1-2 hari kerja",
     highlight:
