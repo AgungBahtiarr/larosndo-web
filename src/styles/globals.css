@@ -78,6 +78,10 @@
   body {
     @apply bg-background text-foreground antialiased;
   }
+  ::selection {
+    background-color: hsl(var(--brand));
+    color: hsl(var(--brand-foreground));
+  }
 }
 
 @keyframes marquee {
