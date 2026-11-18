@@ -153,7 +153,7 @@ const PricingSection = ({
         features: [
           "Bandwidth simetris 100 Mbps",
           "Kuota unlimited tanpa FUP",
-          "1 Alamat IP Publik Statis",
+          "Koneksi fiber stabil & minim latency",
           "Dukungan teknis prioritas 24/7",
         ],
       },
@@ -167,7 +167,7 @@ const PricingSection = ({
         features: [
           "Bandwidth dedicated 300 Mbps",
           "Target SLA uptime 99,5%",
-          "IP Publik Statis + monitoring proaktif",
+          "Monitoring jaringan proaktif",
           "Penanganan teknisi on-site cepat",
         ],
       },
@@ -178,6 +178,7 @@ const PricingSection = ({
         tagline: "Solusi khusus kampus, hotel, dan instansi besar.",
         features: [
           "Kapasitas dedicated 1 Gbps ke atas",
+          "Alamat IP Publik Statis",
           "Jalur backup fiber ganda (redundancy)",
           "SLA khusus & account manager",
           "Dukungan NOC 24/7",

@@ -99,23 +99,29 @@
   animation-play-state: paused;
 }
 
-@keyframes fiber-flow {
+@keyframes beam-slide {
   0% {
-    stroke-dashoffset: 32;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
   }
   100% {
-    stroke-dashoffset: 0;
+    transform: translateX(260%);
+    opacity: 0;
   }
 }
 
-.animate-fiber-flow {
-  stroke-dasharray: 6 10;
-  animation: fiber-flow 1.4s linear infinite;
+.animate-beam {
+  animation: beam-slide 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-.animate-fiber-flow-slow {
-  stroke-dasharray: 4 12;
-  animation: fiber-flow 2.2s linear infinite;
+.animate-beam-slow {
+  animation: beam-slide 3.2s cubic-bezier(0.4, 0, 0.2, 1) 0.9s infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -125,8 +131,10 @@
     width: 100%;
     justify-content: center;
   }
-  .animate-fiber-flow,
-  .animate-fiber-flow-slow {
+  .animate-beam,
+  .animate-beam-slow {
     animation: none;
+    opacity: 0.6;
+    transform: translateX(60%);
   }
 }

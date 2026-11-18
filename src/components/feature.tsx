@@ -66,114 +66,75 @@ const FeaturesSection = () => {
 
               <div
                 aria-hidden="true"
-                className="mb-6 rounded-xl border border-gray-200/80 dark:border-neutral-800 bg-gray-50/80 dark:bg-neutral-950/70 p-4"
+                className="mb-6 rounded-xl border border-gray-200/90 dark:border-neutral-800 bg-gray-50/70 dark:bg-neutral-950/70 p-4"
               >
-                <div className="flex items-center justify-between text-[11px] font-medium text-gray-500 dark:text-gray-400 mb-3">
-                  <span className="inline-flex items-center gap-1.5">
+                <div className="flex items-center justify-between text-xs mb-4">
+                  <span className="inline-flex items-center gap-2 font-medium text-gray-700 dark:text-gray-200">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                     </span>
-                    Multi-Link Backbone Active
+                    Multi-Link Backbone
                   </span>
-                  <span className="font-mono text-brand font-semibold">Auto-Failover</span>
+                  <span className="rounded-md bg-brand/10 px-2 py-0.5 font-mono text-[11px] font-semibold text-brand">
+                    Auto-Failover
+                  </span>
                 </div>
 
-                <svg
-                  viewBox="0 0 320 96"
-                  className="w-full h-24 overflow-visible"
-                  fill="none"
-                >
-                  <path
-                    d="M 38 48 C 95 16, 225 16, 282 48"
-                    className="stroke-gray-200 dark:stroke-neutral-800"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M 38 48 C 95 16, 225 16, 282 48"
-                    className="stroke-brand animate-fiber-flow"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                  />
+                <div className="grid grid-cols-[auto_1fr_auto] items-center gap-3">
+                  {/* Left Node: IXP / Upstream */}
+                  <div className="flex flex-col items-center justify-center rounded-lg border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 px-3 py-2.5 shadow-xs">
+                    <NetworkIcon className="h-4 w-4 text-brand mb-1" />
+                    <span className="text-[11px] font-semibold text-gray-900 dark:text-white leading-none">
+                      IXP Core
+                    </span>
+                    <span className="text-[10px] text-gray-500 dark:text-gray-400 mt-1 leading-none">
+                      7+ Upstream
+                    </span>
+                  </div>
 
-                  <path
-                    d="M 38 48 C 95 80, 225 80, 282 48"
-                    className="stroke-gray-200 dark:stroke-neutral-800"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M 38 48 C 95 80, 225 80, 282 48"
-                    className="stroke-emerald-500/80 animate-fiber-flow-slow"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
+                  {/* Center: Dual Optical Fiber Paths */}
+                  <div className="flex flex-col gap-3 py-1">
+                    {/* Primary Link */}
+                    <div>
+                      <div className="flex items-center justify-between text-[10px] mb-1">
+                        <span className="font-medium text-gray-600 dark:text-gray-300">
+                          Jalur Utama
+                        </span>
+                        <span className="font-mono text-brand font-medium">Aktif</span>
+                      </div>
+                      <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-neutral-800">
+                        <div className="animate-beam absolute inset-y-0 left-0 w-1/2 rounded-full bg-gradient-to-r from-transparent via-brand to-transparent" />
+                      </div>
+                    </div>
 
-                  <rect
-                    x="114"
-                    y="10"
-                    width="92"
-                    height="18"
-                    rx="9"
-                    className="fill-white dark:fill-neutral-900 stroke-gray-200 dark:stroke-neutral-700"
-                  />
-                  <text
-                    x="160"
-                    y="22"
-                    textAnchor="middle"
-                    className="fill-gray-700 dark:fill-gray-200 text-[9px] font-semibold"
-                  >
-                    Jalur Utama · IXP
-                  </text>
+                    {/* Backup Link */}
+                    <div>
+                      <div className="flex items-center justify-between text-[10px] mb-1">
+                        <span className="font-medium text-gray-600 dark:text-gray-300">
+                          Jalur Backup
+                        </span>
+                        <span className="font-mono text-emerald-600 dark:text-emerald-400 font-medium">
+                          Siaga
+                        </span>
+                      </div>
+                      <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-neutral-800">
+                        <div className="animate-beam-slow absolute inset-y-0 left-0 w-1/2 rounded-full bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
+                      </div>
+                    </div>
+                  </div>
 
-                  <rect
-                    x="114"
-                    y="68"
-                    width="92"
-                    height="18"
-                    rx="9"
-                    className="fill-white dark:fill-neutral-900 stroke-gray-200 dark:stroke-neutral-700"
-                  />
-                  <text
-                    x="160"
-                    y="80"
-                    textAnchor="middle"
-                    className="fill-gray-600 dark:fill-gray-300 text-[9px] font-medium"
-                  >
-                    Backup Failover
-                  </text>
-
-                  <circle
-                    cx="38"
-                    cy="48"
-                    r="16"
-                    className="fill-brand/15 stroke-brand"
-                    strokeWidth="1.5"
-                  />
-                  <text
-                    x="38"
-                    y="51"
-                    textAnchor="middle"
-                    className="fill-brand text-[9px] font-bold"
-                  >
-                    CORE
-                  </text>
-
-                  <circle
-                    cx="282"
-                    cy="48"
-                    r="16"
-                    className="fill-emerald-500/15 stroke-emerald-500"
-                    strokeWidth="1.5"
-                  />
-                  <text
-                    x="282"
-                    y="51"
-                    textAnchor="middle"
-                    className="fill-emerald-600 dark:fill-emerald-400 text-[9px] font-bold"
-                  >
-                    ANDA
-                  </text>
-                </svg>
+                  {/* Right Node: Customer */}
+                  <div className="flex flex-col items-center justify-center rounded-lg border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 px-3 py-2.5 shadow-xs">
+                    <ZapIcon className="h-4 w-4 text-emerald-500 mb-1" />
+                    <span className="text-[11px] font-semibold text-gray-900 dark:text-white leading-none">
+                      Lokasi Anda
+                    </span>
+                    <span className="text-[10px] text-emerald-600 dark:text-emerald-400 mt-1 leading-none">
+                      Stabil
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
             <ul className="space-y-2.5 pt-6 border-t border-gray-100 dark:border-neutral-800 text-sm text-gray-700 dark:text-gray-300">
