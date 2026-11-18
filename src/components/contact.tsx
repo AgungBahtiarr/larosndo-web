@@ -47,8 +47,9 @@ const ContactSection = () => {
                   aria-hidden="true"
                 />
                 <span className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Perum Griya Gurit Permai Blok H 14 Pengatigan, Rogojampi, Kab.
-                  Banyuwangi, Jawa Timur 68462
+                  Jl. Perumahan Griya Gurit Permai Blok ii No.16, Guri,
+                  Pengatigan, Kec. Rogojampi, Kabupaten Banyuwangi, Jawa Timur
+                  68462
                 </span>
               </li>
             </ul>
