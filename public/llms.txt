@@ -1,6 +1,6 @@
 # PT Lare Osing Ndo
 
-> Penyedia layanan internet (ISP) fiber optik berkecepatan tinggi di Banyuwangi, Jawa Timur (AS149714). Melayani pasang WiFi rumah, sekolah, instansi pemerintah, dan internet dedicated bisnis tanpa FUP dengan multi-link backbone dan low latency gaming.
+> Penyedia layanan internet (ISP) fiber optik berkecepatan tinggi di Banyuwangi, Jawa Timur. Melayani pasang WiFi rumah, sekolah, instansi pemerintah, dan internet dedicated bisnis tanpa FUP dengan multi-link backbone dan low latency gaming.
 
 ## Layanan & Paket Internet
 
@@ -16,10 +16,9 @@
 - [Panduan Internet & Jaringan](https://laros.net.id/panduan): Artikel cara memilih WiFi tanpa FUP, mengenal titik ODP, dan perbedaan dedicated vs broadband.
 - [Jangkauan Kecamatan Banyuwangi](https://laros.net.id/jangkauan/rogojampi): Halaman detail jangkauan untuk Banyuwangi Kota, Rogojampi, Glagah, Giri, Kabat, Cluring, Genteng, Srono, Muncar, Singojuruh, Kalibaru, dan Songgon.
 
-## Keunggulan Jaringan (AS149714)
+## Keunggulan Jaringan
 
 - [Layanan & Multi-Link Backbone](https://laros.net.id/#features): Jalur backbone ganda dengan auto-failover dan rute langsung ke 7+ IXP (IIX Jakarta, DE-CIX Jakarta, OpenIXP, ODIX, BIX Jakarta, SWIN Exchange, JKT-IX).
-- [Kredensial & Sertifikasi](https://laros.net.id/#credentials): Terdaftar resmi di KOMDIGI, APJII, IDNIC, JARTATEL, MANRS, RPKI, AltDB, RADB, dan [PeeringDB AS149714](https://www.peeringdb.com/net/29921).
 
 ## Jangkauan Wilayah & Kontak
 

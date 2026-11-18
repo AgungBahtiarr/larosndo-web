@@ -344,7 +344,7 @@ export const guideArticles: GuideArticle[] = [
       {
         heading: "Keunggulan Multi-Link Backbone dan IP Publik Statis",
         paragraphs: [
-          "Layanan bisnis PT Lare Osing Ndo (AS149714) berjalan di atas infrastruktur multi-link backbone dengan mekanisme auto-failover ke berbagai Internet Exchange (IXP) di Indonesia:",
+          "Layanan bisnis PT Lare Osing Ndo berjalan di atas infrastruktur multi-link backbone dengan mekanisme auto-failover ke berbagai Internet Exchange (IXP) di Indonesia:",
         ],
         bullets: [
           "Tersedia target SLA uptime 99,5% dengan monitoring jaringan proaktif 24/7 oleh NOC.",

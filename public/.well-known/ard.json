@@ -5,11 +5,11 @@
       "displayName": "PT Lare Osing Ndo — ISP Fiber Optik Banyuwangi",
       "type": "text/markdown",
       "url": "https://laros.net.id/llms.txt",
-      "description": "Informasi paket WiFi rumah tanpa FUP, internet dedicated bisnis & sekolah, cek jangkauan kecamatan di Banyuwangi, serta kredensial jaringan AS149714.",
+      "description": "Informasi paket WiFi rumah tanpa FUP, internet dedicated bisnis & sekolah, serta cek jangkauan kecamatan di Banyuwangi.",
       "representativeQueries": [
         "paket pasang wifi fiber banyuwangi",
         "harga internet unlimited tanpa fup pt lare osing ndo",
-        "layanan internet dedicated dan ip transit banyuwangi as149714"
+        "layanan internet dedicated dan ip transit banyuwangi"
       ]
     }
   ]

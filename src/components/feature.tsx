@@ -76,7 +76,7 @@ const FeaturesSection = () => {
                     </span>
                     Multi-Link Backbone Active
                   </span>
-                  <span className="font-mono text-brand font-semibold">AS149714</span>
+                  <span className="font-mono text-brand font-semibold">Auto-Failover</span>
                 </div>
 
                 <svg
