@@ -12,14 +12,14 @@ const HeroSection = ({ children }: HeroSectionProps) => {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-grid-slate-200/70 dark:bg-grid-neutral-800/50 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
       />
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         {children && <div className="mb-6">{children}</div>}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance text-gray-900 dark:text-white mb-5">
-          Internet Fiber Optik Cepat &amp; Stabil di Banyuwangi
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight sm:whitespace-nowrap text-gray-900 dark:text-white mb-5">
+          Connected To A Better Future
         </h1>
         <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mb-8 text-balance">
-          Koneksi andal 24/7 tanpa batas kuota untuk rumah, lembaga pendidikan,
-          dan bisnis Anda.
+          Internet fiber optik cepat &amp; stabil di Banyuwangi — andal 24/7
+          tanpa batas kuota untuk rumah, lembaga pendidikan, dan bisnis Anda.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
           <a
