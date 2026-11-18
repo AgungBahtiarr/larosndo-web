@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -6,12 +7,13 @@ const currentYear = new Date().getFullYear();
   <div class="max-w-7xl mx-auto px-6 py-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-8 mb-6 border-b border-gray-200 dark:border-neutral-800">
       <div>
-        <img
+        <Image
           class="h-8 w-auto mb-3"
           src="/laroslogo.png"
           alt="Logo PT Lare Osing Ndo"
-          width="96"
-          height="32"
+          width={96}
+          height={32}
+          loading="lazy"
         />
         <p class="text-sm text-gray-600 dark:text-gray-400">
           Penyedia layanan internet fiber optik tanpa FUP di Kabupaten Banyuwangi.

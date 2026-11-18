@@ -49,7 +49,7 @@ const AboutSection = () => {
             Tentang LarosNdo
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Menghadirkan solusi internet fiber optik mutakhir di Banyuwangi sejak 2020
+            Menghadirkan solusi internet fiber optik mutakhir di Banyuwangi sejak 2022
           </p>
         </div>
 
@@ -62,7 +62,7 @@ const AboutSection = () => {
             />
             <div className="absolute bottom-4 right-4 md:-bottom-5 md:-right-5 bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 px-5 py-3.5 rounded-xl shadow-lg">
               <p className="text-2xl font-bold tabular-nums text-brand">
-                Sejak 2020
+                Sejak 2022
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-300">
                 Melayani Banyuwangi
